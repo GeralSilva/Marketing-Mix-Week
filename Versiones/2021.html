@@ -189,12 +189,664 @@
             margin-top: 60px;
         }
 
+        /* Agenda Styles */
+        .agenda-container {
+            background: #fff;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .agenda-day {
+            margin-bottom: 2rem;
+            border-left: 4px solid #f76300;
+            padding-left: 1.5rem;
+        }
+
+        .agenda-day h4 {
+            color: #f76300;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .agenda-day h4 i {
+            margin-right: 0.5rem;
+        }
+
+        .agenda-items {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .agenda-item {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .agenda-item:last-child {
+            border-bottom: none;
+        }
+
+        .agenda-item .time {
+            font-weight: bold;
+            color: #f76300;
+            font-size: 0.9rem;
+        }
+
+        .agenda-item .activity {
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        /* Activity Detail Cards */
+        .activity-detail-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .activity-detail-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(247, 99, 0, 0.3);
+        }
+
+        .activity-header {
+            background: linear-gradient(135deg, #f76300, #ff8533);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .activity-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .activity-header i {
+            margin-right: 0.5rem;
+        }
+
+        .activity-content {
+            padding: 1.5rem;
+        }
+
+        .activity-content h4 {
+            color: #f76300;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .activity-content p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .contact-info h5 {
+            color: #f76300;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .contact-info p {
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .invitation-text {
+            background: linear-gradient(135deg, rgba(247, 99, 0, 0.1), rgba(255, 133, 51, 0.1));
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #f76300;
+        }
+
+        .invitation-text p {
+            margin: 0;
+            font-style: italic;
+            color: #666;
+        }
+
+        .mix-variable {
+            background: #fff;
+            border-left: 4px solid #f76300;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            color: #333;
+        }
+
+        .mix-variable h4 {
+            color: #f76300;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .mix-variable p {
+            color: #666;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .mix-variable h5 {
+            color: #f76300;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .evaluation-criteria h5 {
+            color: #f76300;
+            font-weight: bold;
+        }
+
+        .checklist-container {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+
+        .marketing-mix-diagram {
+            position: relative;
+            min-height: 500px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .mix-center {
+            position: relative;
+            width: 100%;
+            height: 450px;
+        }
+
+        .mix-circle {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mix-item {
+            position: absolute;
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 3px solid #f76300;
+            width: 200px;
+            transition: transform 0.3s ease;
+        }
+
+        .mix-item:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+
+        .mix-item h6 {
+            background: #f76300;
+            color: white;
+            padding: 8px;
+            border-radius: 8px;
+            margin: -15px -15px 10px -15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .mix-item ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.75rem;
+        }
+
+        .mix-item li {
+            padding: 2px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .mix-item li:last-child {
+            border-bottom: none;
+        }
+
+        .mix-producto {
+            top: 20px;
+            left: 20px;
+        }
+
+        .mix-precio {
+            top: 20px;
+            right: 20px;
+        }
+
+        .mix-plaza {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .mix-promocion {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .presentation-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #f76300, #ff8533);
+            color: white;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(247, 99, 0, 0.3);
+            z-index: 5;
+        }
+
+        .presentation-icon i {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+
+        .presentation-icon span {
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        /* Connecting lines */
+        .mix-circle::before,
+        .mix-circle::after {
+            content: '';
+            position: absolute;
+            background: #f76300;
+            opacity: 0.3;
+        }
+
+        .mix-circle::before {
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            transform: translateY(-50%);
+        }
+
+        .mix-circle::after {
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            transform: translateX(-50%);
+        }
+
+        @media (max-width: 768px) {
+            .marketing-mix-diagram {
+                min-height: 600px;
+            }
+            
+            .mix-item {
+                width: 160px;
+                padding: 10px;
+            }
+            
+            .mix-item h6 {
+                font-size: 0.8rem;
+                margin: -10px -10px 8px -10px;
+            }
+            
+            .mix-item ul {
+                font-size: 0.7rem;
+            }
+            
+            .presentation-icon {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .presentation-icon i {
+                font-size: 2rem;
+            }
+        }
+
+        .requirements-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .requirements-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .requirements-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #f76300;
+            font-weight: bold;
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .rule-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid #f76300;
+        }
+
+        .rule-number {
+            background: #f76300;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .rule-text {
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        /* Roles y Responsabilidades Styles */
+        .roles-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .final-meeting-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid #ff6b35;
+        }
+        
+        .final-title {
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .final-subtitle {
+            color: #ff6b35;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .final-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .premise-box {
+            background: #ff6b35;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .premise-box h5 {
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        .role-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #ff6b35;
+            margin-bottom: 15px;
+        }
+        
+        .role-box i {
+            color: #ff6b35;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .role-box h6 {
+            color: #333;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .presentation-visual {
+            background: #ff6b35;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        
+        .presentation-visual i {
+            color: white;
+            font-size: 3em;
+        }
+        
+        .requirements-section {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .requirements-title {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        
+        .requirement-item {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .requirement-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .requirement-icon {
+            background: #ff6b35;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+        
+        .requirement-icon i {
+            color: white;
+            font-size: 2em;
+        }
+        
+        .requirement-item h5 {
+            color: #333;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .roles-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        
+        .roles-visual i {
+            color: #ff6b35;
+            font-size: 8em;
+            opacity: 0.8;
+        }
+        
+        .roles-content h3 {
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .roles-subtitle {
+            color: #ff6b35;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        .role-item h5 {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .role-item h5 i {
+            color: #ff6b35;
+            margin-right: 10px;
+        }
+        
+        .role-item p {
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        .responsibilities-section {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .responsibilities-title {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        
+        .responsibilities-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .responsibility-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #ff6b35;
+        }
+        
+        .responsibility-number {
+            background: #ff6b35;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .responsibility-text p {
+            color: #333;
+            margin: 0;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
             }
             .section-title {
                 font-size: 2rem;
+            }
+            .rules-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .final-meeting-card {
+                padding: 20px;
+            }
+            
+            .requirements-section,
+            .responsibilities-section {
+                padding: 20px;
+            }
+            
+            .roles-visual i {
+                font-size: 4em;
+            }
+            
+            .presentation-visual {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .presentation-visual i {
+                font-size: 2em;
+            }
+            
+            .requirement-icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .requirement-icon i {
+                font-size: 1.5em;
             }
         }
     </style>
@@ -214,9 +866,6 @@
                     <li class='nav-item'>
                         <a class='nav-link' href='../index.html'>Inicio</a>
                     </li>
-                    <li class='nav-item'>
-                        <a class='nav-link active' href='#'>2021</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -228,7 +877,7 @@
             <h1 class='hero-title'>Marketing Mix Week 2021</h1>
             <p class='hero-subtitle'>Una semana de mercadeo institucionalizada para evidenciar las prácticas formativas del área</p>
             <div class='date-badge'>
-                <i class='fas fa-calendar-alt'></i> 6 al 10 de septiembre - Fecha tentativa
+                <i class='fas fa-calendar-alt'></i>  6 al 10 de septiembre
             </div>
         </div>
     </section>
@@ -332,14 +981,615 @@
         </div>
     </section>
 
-    <!-- Call to Action -->
+    
+
+    <!-- Agenda del Evento -->
+    <section class='container my-5'>
+        <h2 class='section-title'>Agenda del Evento</h2>
+        <div class='agenda-container'>
+            <div class='agenda-day'>
+                <h4><i class='fas fa-calendar-day'></i> Lunes - PRODUCTO</h4>
+                <div class='agenda-items'>
+                    <div class='agenda-item'>
+                        <span class='time'>9:00</span>
+                        <span class='activity'>Apertura - bienvenida - cronograma - salud ocupacional</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>10:00</span>
+                        <span class='activity'>Presentación de proyecto 1 al 5 (10 min de presentación, 5 de preguntas)</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>12:00</span>
+                        <span class='activity'>Conferencia/Taller PRODUCTO</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>13:00</span>
+                        <span class='activity'>Almuerzo (12:30 a 14:00)</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>14:00</span>
+                        <span class='activity'>Caso de Éxito</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>16:00</span>
+                        <span class='activity'>Presentación de proyecto 6 al 10 (10 min de presentación, 5 de preguntas)</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>17:00</span>
+                        <span class='activity'>Olimpiadas de Conocimiento PRODUCTO</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>18:00</span>
+                        <span class='activity'>Termina 5:30 pm</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='agenda-day'>
+                <h4><i class='fas fa-calendar-day'></i> Martes - PRECIO</h4>
+                <div class='agenda-items'>
+                    <div class='agenda-item'>
+                        <span class='time'>10:00</span>
+                        <span class='activity'>Presentación de proyecto 6 al 10 (10 min de presentación, 5 de preguntas)</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>12:00</span>
+                        <span class='activity'>Almuerzo (12:00 a 13:30)</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>14:00</span>
+                        <span class='activity'>Presentación de proyecto 1 al 5 (10 min de presentación, 5 de preguntas)</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>16:00</span>
+                        <span class='activity'>Conferencia/Taller PRECIO</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>17:00</span>
+                        <span class='activity'>Olimpiadas de Conocimiento PRECIO</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>18:00</span>
+                        <span class='activity'>Termina 5:30 pm</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='agenda-day'>
+                <h4><i class='fas fa-calendar-day'></i> Miércoles - PLAZA</h4>
+                <div class='agenda-items'>
+                    <div class='agenda-item'>
+                        <span class='time'>12:00</span>
+                        <span class='activity'>Conferencia/Taller PLAZA</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>13:00</span>
+                        <span class='activity'>Almuerzo (13:00 a 14:30)</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>14:00</span>
+                        <span class='activity'>Caso de Éxito</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>17:00</span>
+                        <span class='activity'>Olimpiadas de Conocimiento PLAZA</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>18:00</span>
+                        <span class='activity'>Termina 5:30 pm</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='agenda-day'>
+                <h4><i class='fas fa-calendar-day'></i> Jueves - PROMOCIÓN</h4>
+                <div class='agenda-items'>
+                    <div class='agenda-item'>
+                        <span class='time'>10:00</span>
+                        <span class='activity'>Presentación de proyecto 6 al 10 (10 min de presentación, 5 de preguntas)</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>12:00</span>
+                        <span class='activity'>Almuerzo (12:00 a 13:30)</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>14:00</span>
+                        <span class='activity'>Presentación de proyecto 1 al 5 (10 min de presentación, 5 de preguntas)</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>16:00</span>
+                        <span class='activity'>Conferencia/Taller PROMOCIÓN</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>17:00</span>
+                        <span class='activity'>Olimpiadas de Conocimiento PROMOCIÓN</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>18:00</span>
+                        <span class='activity'>Termina 5:30 pm</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='agenda-day'>
+                <h4><i class='fas fa-calendar-day'></i> Viernes</h4>
+                <div class='agenda-items'>
+                    <div class='agenda-item'>
+                        <span class='time'>11:00</span>
+                        <span class='activity'>Los 3 mejores proyectos pasarán a la sesión final del Marketing Mix Strategy (5 minutos por grupo y 10 de preguntas de los jurados)</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>12:00</span>
+                        <span class='activity'>Premiación Marketing Mix Strategy</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>13:00</span>
+                        <span class='activity'>Ronda final Olimpiadas de Conocimiento</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>14:00</span>
+                        <span class='activity'>Premiación Olimpiadas de Conocimiento</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>15:00</span>
+                        <span class='activity'>Cierre del Marketing Mix Week</span>
+                    </div>
+                    <div class='agenda-item'>
+                        <span class='time'>16:00</span>
+                        <span class='activity'>Termina 1:00 pm</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Actividades Detalladas -->
+    <section class='container my-5'>
+        <h2 class='section-title'>Actividades Detalladas</h2>
+        
+        <div class='row mb-5'>
+            <div class='col-md-6'>
+                <div class='activity-detail-card'>
+                    <div class='activity-header'>
+                        <h3><i class='fas fa-chalkboard-teacher'></i> Conferencia Taller</h3>
+                    </div>
+                    <div class='activity-content'>
+                        <h4>Generalidades</h4>
+                        <p><strong>Descripción:</strong> Una conferencia diaria centrada en temáticas específicas de la P del día, llevada a cabo por un experto técnico; de dicha conferencia podrá desprenderse un taller de aplicación.</p>
+                        <p><strong>Día de realización:</strong> De acuerdo con la agenda presentada (Lunes/Producto, Martes/Precio, Miércoles/Plaza, Jueves/Promoción).</p>
+                        <p><strong>Asistentes de la actividad:</strong> Comunidad educativa área de mercadeo.</p>
+                        <div class='contact-info'>
+                            <h5>Contacto</h5>
+                            <p><strong>Instructora Natalia Peña</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col-md-6'>
+                <div class='activity-detail-card'>
+                    <div class='activity-header'>
+                        <h3><i class='fas fa-trophy'></i> Casos de Éxito</h3>
+                    </div>
+                    <div class='activity-content'>
+                        <h4>Generalidades</h4>
+                        <p><strong>Descripción:</strong> Presentación de experiencias exitosas vividas por ex-aprendices en el campo del marketing (etapa productiva y/o en su desempeño en el sector productivo, como en emprendimientos).</p>
+                        <p><strong>Día de realización:</strong> De acuerdo con la agenda presentada (Lunes/Producto, Martes/Precio, Miércoles/Plaza, Jueves/Promoción).</p>
+                        <p><strong>Asistentes de la actividad:</strong> Comunidad educativa área de mercadeo.</p>
+                        <div class='contact-info'>
+                            <h5>Contacto</h5>
+                            <p><strong>Instructora Natalia Peña</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col-md-12 mt-4'>
+                <div class='activity-detail-card'>
+                    <div class='activity-header'>
+                        <h3><i class='fas fa-medal'></i> Olimpiadas de Conocimiento</h3>
+                    </div>
+                    <div class='activity-content'>
+                        <h4>Generalidades</h4>
+                        <p><strong>Descripción:</strong> Consiste en un concurso didáctico a través de una plataforma digital (Quizizz - Kahoot - Educaplay), que corresponde a preguntas temáticas de acuerdo al día que se esté desarrollando. El día viernes será la final entre los tres mejores puntajes acumulados los días anteriores.</p>
+                        <p><strong>Día de realización:</strong> De acuerdo con la agenda presentada (Lunes/Producto, Martes/Precio, Miércoles/Plaza, Jueves/Promoción), Viernes/Ronda final y Premiación.</p>
+                        <p><strong>Participantes de la actividad:</strong> Un aprendiz representante de cada una de las fichas del área de mercadeo, diferente para cada día. Participarán 4 representantes por ficha en las 4 pruebas de las olimpiadas (una diaria correspondiente a cada P). Las fichas que pasen a la final deberán tener un representante adicional.</p>
+                        <p><strong>Asistentes de la actividad:</strong> Comunidad educativa área de mercadeo.</p>
+                        
+                        <h4 class='mt-4'>Dinámica</h4>
+                        <p>Día a día, los representantes de cada una de las fichas concursarán entre ellos por obtener la mayor cantidad de puntos en la plataforma, respondiendo a preguntas referentes a la P específica del día.</p>
+                        <p>Cada día un aprendiz diferente representará a su respectiva ficha.</p>
+                        <p>Se obtendrán 3 fichas finalistas, establecidas por los mayores puntajes acumulados por sus aprendices en los 4 días iniciales, estas pasarán a la ronda final el viernes, asistiendo de forma presencial al CGMLTI</p>
+                        
+                        <h4 class='mt-4'>Requisitos para participar</h4>
+                        <ul class='requirements-list'>
+                            <li>Realizar la inscripción en los tiempos y medios definidos.</li>
+                            <li>Disponer de buena conectividad (es un factor muy importante y determinante en el desarrollo de las pruebas).</li>
+                            <li>Tener el correo @misena activo.</li>
+                            <li>Tener login activo en plataformas digitales para participación de juegos.</li>
+                            <li>Tener disponible Computador.</li>
+                            <li>Tener disponible Smartphone (recomendado).</li>
+                        </ul>
+                        
+                        <h4 class='mt-4'>Reglas</h4>
+                        <div class='rules-grid'>
+                            <div class='rule-item'>
+                                <span class='rule-number'>1</span>
+                                <span class='rule-text'>Todas las fichas del área de mercadeo</span>
+                            </div>
+                            <div class='rule-item'>
+                                <span class='rule-number'>2</span>
+                                <span class='rule-text'>Representante por cada día, más suplentes</span>
+                            </div>
+                            <div class='rule-item'>
+                                <span class='rule-number'>3</span>
+                                <span class='rule-text'>Inscripción obligatoria</span>
+                            </div>
+                            <div class='rule-item'>
+                                <span class='rule-number'>4</span>
+                                <span class='rule-text'>Apoyo de compañeros en RRSS</span>
+                            </div>
+                            <div class='rule-item'>
+                                <span class='rule-number'>5</span>
+                                <span class='rule-text'>No intervención de Instructores en las respuestas</span>
+                            </div>
+                            <div class='rule-item'>
+                                <span class='rule-number'>6</span>
+                                <span class='rule-text'>Cambios de aprendices representantes</span>
+                            </div>
+                            <div class='rule-item'>
+                                <span class='rule-number'>7</span>
+                                <span class='rule-text'>Correo electrónico institucional @misena activo</span>
+                            </div>
+                            <div class='rule-item'>
+                                <span class='rule-number'>8</span>
+                                <span class='rule-text'>Usuarios en plataformas Quizizz y Educaplay</span>
+                            </div>
+                            <div class='rule-item'>
+                                <span class='rule-number'>9</span>
+                                <span class='rule-text'>Nickname ejemplo: TGM 05 Pedro Pérez</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketing Mix Strategy Activity -->
+    <section class='container my-5'>
+        <h2 class='section-title'>Marketing Mix Strategy</h2>
+        
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='activity-detail-card'>
+                    <div class='activity-header'>
+                        <h3><i class='fas fa-chess'></i> Generalidades</h3>
+                    </div>
+                    <div class='activity-content'>
+                        <p><strong>Descripción:</strong> Los aprendices de los últimos trimestres de la Tecnología en Gestión de Mercados, expondrán sus proyectos evidenciando la aplicación de conocimientos y el desempeño alcanzado en su etapa lectiva.</p>
+                        <p><strong>Día de realización:</strong> De acuerdo con la agenda presentada (Lunes/Producto, Martes/Precio, Miércoles/Plaza, Jueves/Promoción), Viernes/Micro-presentación final y Premiación.</p>
+                        <p><strong>Participantes de la actividad:</strong> Un grupo de proyecto elegido por el equipo ejecutor, por cada una de las fichas que se encuentren en quinto y sexto trimestre de su etapa lectiva.</p>
+                        <p><strong>Asistentes de la actividad:</strong> Comunidad educativa área de mercadeo.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col-md-6'>
+                <div class='activity-detail-card'>
+                    <div class='activity-header'>
+                        <h3><i class='fas fa-list-alt'></i> Tópicos de Contenido</h3>
+                    </div>
+                    <div class='activity-content'>
+                        <p>La presentación debe estar centrada en lo concerniente a la variable que corresponde para cada día y al diseño de estrategias que den solución a problemáticas identificadas en esta.</p>
+                        
+                        <!-- Marketing Mix Visual Diagram -->
+                        <div class='marketing-mix-diagram my-4'>
+                            <div class='mix-center'>
+                                <div class='mix-circle'>
+                                    <div class='mix-item mix-producto'>
+                                        <h6>Lunes/Producto</h6>
+                                        <ul>
+                                            <li>Estrategias de producto</li>
+                                            <li>Propuesta de valor</li>
+                                            <li>Niveles</li>
+                                            <li>Propuesta de servicio</li>
+                                            <li>Prototipado y diseño</li>
+                                            <li>Branding y packaging</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class='mix-item mix-precio'>
+                                        <h6>Martes/Precio</h6>
+                                        <ul>
+                                            <li>Estrategia para fijación de precios</li>
+                                            <li>Oferta y demanda</li>
+                                            <li>Percepción de valor</li>
+                                            <li>Costos</li>
+                                            <li>Márgenes</li>
+                                            <li>Punto de equilibrio</li>
+                                            <li>Competencia</li>
+                                            <li>Márgenes de negociación al intermediario</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class='mix-item mix-plaza'>
+                                        <h6>Miércoles/Plaza</h6>
+                                        <ul>
+                                            <li>Estrategia de distribución</li>
+                                            <li>Cobertura</li>
+                                            <li>Cadena de valor</li>
+                                            <li>Logística</li>
+                                            <li>Infraestructura</li>
+                                            <li>Intermediarios</li>
+                                            <li>E-commerce</li>
+                                            <li>Formato comercial</li>
+                                            <li>Gestión de canal</li>
+                                            <li>Venta directa</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class='mix-item mix-promocion'>
+                                        <h6>Jueves/Promoción</h6>
+                                        <ul>
+                                            <li>Estrategia de comunicación</li>
+                                            <li>Relaciones públicas</li>
+                                            <li>Fuerza de ventas</li>
+                                            <li>Merchandising</li>
+                                            <li>Marketing digital</li>
+                                            <li>Promoción de ventas</li>
+                                            <li>Publicidad</li>
+                                            <li>Marketing directo</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- Presentation Icon -->
+                                    <div class='presentation-icon'>
+                                        <i class='fas fa-presentation'></i>
+                                        <span>Presentación</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class='row mt-4'>
+            <div class='col-md-6'>
+                <div class='activity-detail-card'>
+                    <div class='activity-header'>
+                        <h3><i class='fas fa-clipboard-check'></i> Aspectos a Evaluar</h3>
+                    </div>
+                    <div class='activity-content'>
+                        <h4>De Lunes a Jueves</h4>
+                        <p><strong>Apoyo como jurados:</strong> Listas de chequeo</p>
+                        
+                        <div class='mt-3'>
+                            <h5 style='color: #f76300;'>Análisis</h5>
+                            <p>• Problemática base para la generación de estrategia.</p>
+                            
+                            <h5 style='color: #f76300;' class='mt-3'>Objetivo</h5>
+                            <p>• Objetivo que da soporte a la problemática.</p>
+                            
+                            <h5 style='color: #f76300;' class='mt-3'>Estrategia</h5>
+                            <p>• Estrategia que permite responder al objetivo (estrategias socialmente responsables)</p>
+                            <p>• Táctica(s) y actividades.</p>
+                            <p>• Recursos.</p>
+                            <p>• Costo de estrategia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class='col-md-6'>
+                <div class='activity-detail-card'>
+                    <div class='activity-header'>
+                        <h3><i class='fas fa-cogs'></i> Dinámica de Presentación</h3>
+                    </div>
+                    <div class='activity-content'>
+                        <p>El grupo de proyecto elige un aprendiz por día para que realice la debida presentación de forma presencial en el CGMLTI, esto para los días 1 al 4.</p>
+                        
+                        <p>Con listas de chequeo diarias (primeros 4 días) se definirán los 3 mejores grupos de proyecto.</p>
+                        
+                        <p>Para la final participarán máximo 2 aprendices por grupo de proyecto finalista.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roles y Responsabilidades de los Instructores -->
+    <section class='roles-section py-5'>
+        <div class='container'>
+            <div class='text-center mb-5'>
+                <h2 class='section-title'>Roles y Responsabilidades de los Instructores</h2>
+            </div>
+            
+            <!-- Encuentro Final/Viernes -->
+            <div class='row mb-5'>
+                <div class='col-12'>
+                    <div class='final-meeting-card'>
+                        <div class='row align-items-center'>
+                            <div class='col-md-8'>
+                                <h3 class='final-title'>Actividad Marketing Mix Strategy</h3>
+                                <h4 class='final-subtitle'>Encuentro Final/Viernes</h4>
+                                <p class='final-description'>Los 3 grupos de proyecto con mejor puntaje pasarán a la final y deberán <strong>vender</strong> su plan de marketing a partir de la siguiente premisa:</p>
+                                <div class='premise-box'>
+                                    <h5>El plan de marketing presentado responde a las problemáticas encontradas y por tanto da solución a ellas</h5>
+                                </div>
+                                <div class='row mt-4'>
+                                    <div class='col-md-6'>
+                                        <div class='role-box'>
+                                            <i class='fas fa-users'></i>
+                                            <h6>Grupo de proyecto/Departamento de marketing</h6>
+                                        </div>
+                                    </div>
+                                    <div class='col-md-6'>
+                                        <div class='role-box'>
+                                            <i class='fas fa-gavel'></i>
+                                            <h6>Jurados/Comité general de la empresa</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='col-md-4 text-center'>
+                                <div class='presentation-visual'>
+                                    <i class='fas fa-chart-line'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Requerimientos de trabajo -->
+            <div class='row mb-5'>
+                <div class='col-12'>
+                    <div class='requirements-section'>
+                        <h3 class='requirements-title'>Requerimientos de trabajo</h3>
+                        <div class='row'>
+                            <div class='col-md-3 col-sm-6 mb-4'>
+                                <div class='requirement-item'>
+                                    <div class='requirement-icon'>
+                                        <i class='fas fa-video'></i>
+                                    </div>
+                                    <h5>Video de Contextualización</h5>
+                                </div>
+                            </div>
+                            <div class='col-md-3 col-sm-6 mb-4'>
+                                <div class='requirement-item'>
+                                    <div class='requirement-icon'>
+                                        <i class='fas fa-chart-bar'></i>
+                                    </div>
+                                    <h5>Pieza Gráfica Informativa</h5>
+                                </div>
+                            </div>
+                            <div class='col-md-3 col-sm-6 mb-4'>
+                                <div class='requirement-item'>
+                                    <div class='requirement-icon'>
+                                        <i class='fas fa-presentation'></i>
+                                    </div>
+                                    <h5>Presentación (1 por P)</h5>
+                                </div>
+                            </div>
+                            <div class='col-md-3 col-sm-6 mb-4'>
+                                <div class='requirement-item'>
+                                    <div class='requirement-icon'>
+                                        <i class='fas fa-microphone'></i>
+                                    </div>
+                                    <h5>Micro-presentación (Final)</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Roles del Marketing Mix Week -->
+            <div class='row mb-5'>
+                <div class='col-md-6'>
+                    <div class='roles-visual'>
+                        <i class='fas fa-bullhorn'></i>
+                    </div>
+                </div>
+                <div class='col-md-6'>
+                    <div class='roles-content'>
+                        <h3>Marketing Mix Week</h3>
+                        <h4 class='roles-subtitle'>Roles</h4>
+                        
+                        <div class='role-item mb-3'>
+                            <h5><i class='fas fa-cog'></i> Comité organizador</h5>
+                            <p>* Natalia Peña, Viviana Aranda, Sonia Ramos, Felipe Isaza, Sebastián Chaparro y Freddy Urrea.</p>
+                        </div>
+                        
+                        <div class='role-item mb-3'>
+                            <h5><i class='fas fa-users'></i> Participantes</h5>
+                            <p>* Instructores y aprendices de las áreas de mercadeo presencial.</p>
+                        </div>
+                        
+                        <div class='role-item mb-3'>
+                            <h5><i class='fas fa-user-tie'></i> Invitados</h5>
+                            <p>* Empresarios, conferencistas, egresados.</p>
+                        </div>
+                        
+                        <div class='role-item mb-3'>
+                            <h5><i class='fas fa-hands-helping'></i> Apoyo Actividades</h5>
+                            <p>* Instructores del equipo ejecutor de las fichas de mercadeo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Responsabilidades de los Instructores -->
+            <div class='row'>
+                <div class='col-12'>
+                    <div class='responsibilities-section'>
+                        <h3 class='responsibilities-title'>Responsabilidades de los Instructores</h3>
+                        <div class='responsibilities-list'>
+                            <div class='responsibility-item'>
+                                <div class='responsibility-number'>1</div>
+                                <div class='responsibility-text'>
+                                    <p>Preseleccionar el mejor proyecto por ficha, según criterios de selección establecidos por el equipo ejecutor que trabaja con la ficha.</p>
+                                </div>
+                            </div>
+                            <div class='responsibility-item'>
+                                <div class='responsibility-number'>2</div>
+                                <div class='responsibility-text'>
+                                    <p>Preparar y apoyar a los aprendices en el desarrollo del proyecto.</p>
+                                </div>
+                            </div>
+                            <div class='responsibility-item'>
+                                <div class='responsibility-number'>3</div>
+                                <div class='responsibility-text'>
+                                    <p>Revisar y enviar el material (presentaciones) y piezas gráficas solicitados.</p>
+                                </div>
+                            </div>
+                            <div class='responsibility-item'>
+                                <div class='responsibility-number'>4</div>
+                                <div class='responsibility-text'>
+                                    <p>Inscribir al grupo de proyecto a participar así como los aprendices que compiten en las olimpiadas.</p>
+                                </div>
+                            </div>
+                            <div class='responsibility-item'>
+                                <div class='responsibility-number'>5</div>
+                                <div class='responsibility-text'>
+                                    <p>Participar como jurado de proyectos cada día, según la P de mercadeo en la que es más experto.</p>
+                                </div>
+                            </div>
+                            <div class='responsibility-item'>
+                                <div class='responsibility-number'>6</div>
+                                <div class='responsibility-text'>
+                                    <p>Apoyar en la construcción de base de datos tanto de expertos en el área como de egresados, para que participen como conferencistas y casos de éxito.</p>
+                                </div>
+                            </div>
+                            <div class='responsibility-item'>
+                                <div class='responsibility-number'>7</div>
+                                <div class='responsibility-text'>
+                                    <p>Participar activamente con sus fichas en todas las actividades de la semana.</p>
+                                </div>
+                            </div>
+                            <div class='responsibility-item'>
+                                <div class='responsibility-number'>8</div>
+                                <div class='responsibility-text'>
+                                    <p>Verificar la asistencia y participación de los aprendices a las actividades del evento.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Call to Action -->
     <section class='container text-center my-5'>
         <div class='info-card'>
-            <h3><i class='fas fa-rocket'></i> ¡Únete al Marketing Mix Week 2021!</h3>
+            <h3><i class='fas fa-rocket'></i> ¡Marketing Mix Week 2021!</h3>
             <p>Una oportunidad única para fortalecer conocimientos, crear networking y evidenciar las mejores prácticas en marketing.</p>
             <a href='../index.html' class='btn btn-custom'>
                 <i class='fas fa-home'></i> Volver al Inicio
             </a>
+        </div>
+    </section>
         </div>
     </section>
 
