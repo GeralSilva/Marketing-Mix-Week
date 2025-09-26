@@ -42,16 +42,6 @@ Visita directamente: [https://geralsilva.github.io/Marketing-Mix-Week/](https://
 # Clonar repositorio
 git clone https://github.com/GeralSilva/Marketing-Mix-Week.git
 cd Marketing-Mix-Week
-
-# Abrir en navegador
-# Windows
-start index.html
-
-# macOS
-open index.html
-
-# Linux
-xdg-open index.html
 ```
 
 ### Opción 3: Servidor Local
@@ -96,7 +86,7 @@ docker-compose down
 
 ## ☁️ Despliegue en Azure
 
-Para desplegar en una máquina virtual de Azure, consulta la [Guía de Despliegue en Azure](DEPLOY-AZURE.md).
+Para desplegar en una máquina virtual de Azure.
 
 ### Despliegue Rápido
 
