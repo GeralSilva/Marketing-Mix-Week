@@ -6,8 +6,8 @@
 <title>Marketing Mix Week - Blog Oficial</title>
 
 <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="shortcut icon" href="favicon.svg">
+    <link rel="icon" type="image/png" href="images.png">
+    <link rel="shortcut icon" href="images.png">
 
 <!-- Bootstrap CSS -->
 <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'/>
@@ -19,283 +19,505 @@
 <link href='https://fonts.googleapis.com/css2?family=Quicksand:wght@700&amp;display=swap' rel='stylesheet'/>
 
     <style>
+        /* =========================== */
+        /* ESTILOS GLOBALES Y TIPOGRAFÍA */
+        /* =========================== */
+        
+        /* Configuración base del cuerpo del documento */
         body {
-            font-family: Calibri, Arial, sans-serif;
-            line-height: 1.6;
-            color: #000000;
+            font-family: Calibri, Arial, sans-serif; /* Fuente principal del sitio */
+            line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+            color: #000000; /* Color de texto negro */
         }
         
+        /* Configuración de títulos con fuente Impact para impacto visual */
         h1, h2, h3, h4, h5, h6 {
             font-family: Impact, Arial Black, sans-serif;
             font-weight: normal;
         }
 
+        /* =========================== */
+        /* BARRA DE NAVEGACIÓN */
+        /* =========================== */
+        
+        /* Estilo principal de la barra de navegación con gradiente corporativo */
         .navbar {
-            background: linear-gradient(135deg, #f76300 0%, #ff8533 100%) !important;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #f76300 0%, #ff8533 100%) !important; /* Gradiente naranja corporativo */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra sutil para profundidad */
         }
 
+        /* Logo/marca de la empresa en la navegación */
         .navbar-brand {
-            font-family: Quicksand, sans-serif;
+            font-family: Quicksand, sans-serif; /* Fuente especial para el logo */
             font-weight: 700;
             font-size: 1.5rem;
             color: #ffffff !important;
         }
 
+        /* Enlaces de navegación */
         .nav-link {
             color: #ffffff !important;
             font-family: Calibri, Arial, sans-serif;
             font-weight: 500;
-            margin: 0 10px;
-            transition: all 0.3s ease;
+            margin: 0 10px; /* Espaciado entre enlaces */
+            transition: all 0.3s ease; /* Transición suave para efectos hover */
         }
 
+        /* Efecto hover en enlaces de navegación */
         .nav-link:hover {
             color: #ffffff !important;
-            transform: translateY(-2px);
-            opacity: 0.8;
+            transform: translateY(-2px); /* Efecto de elevación */
+            opacity: 0.8; /* Transparencia al pasar el mouse */
         }
 
+        /* =========================== */
+        /* CARRUSEL PRINCIPAL (HERO SECTION) */
+        /* =========================== */
+        
+        /* Contenedor de cada slide del carrusel */
         .carousel-item {
-            height: 500px;
-            background: linear-gradient(135deg, #f76300 0%, #ff8533 100%);
-            position: relative;
+            height: 500px; /* Altura fija para consistencia */
+            background: linear-gradient(135deg, #f76300 0%, #ff8533 100%); /* Fondo con gradiente corporativo */
+            position: relative; /* Para posicionamiento absoluto del contenido */
         }
 
+        /* Contenido centrado dentro del carrusel */
         .carousel-content {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); /* Centrado perfecto horizontal y vertical */
             text-align: center;
             color: #ffffff;
-            z-index: 2;
+            z-index: 2; /* Asegura que esté por encima del fondo */
         }
 
+        /* Título principal del carrusel */
         .carousel-title {
             font-family: Impact, Arial Black, sans-serif;
-            font-size: 3.5rem;
+            font-size: 3.5rem; /* Tamaño grande para impacto */
             font-weight: normal;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para mejor legibilidad */
         }
 
+        /* Subtítulo del carrusel */
         .carousel-subtitle {
             font-family: Calibri, Arial, sans-serif;
             font-size: 1.5rem;
             margin-bottom: 30px;
-            opacity: 0.9;
+            opacity: 0.9; /* Ligeramente transparente para jerarquía visual */
         }
 
+        /* =========================== */
+        /* TARJETAS DE INFORMACIÓN */
+        /* =========================== */
+        
+        /* Estilo base para tarjetas informativas */
+         .info-card {
+            background: #ffffff;
+            border-radius: 15px; /* Bordes redondeados modernos */
+            padding: 30px; /* Espaciado interno generoso */
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra sutil para profundidad */
+            transition: all 0.3s ease; /* Transición suave para efectos hover */
+            border-left: 5px solid #f76300; /* Borde izquierdo con color corporativo */
+        }
+
+        /* Efecto hover en tarjetas de información */
+        .info-card:hover {
+            transform: translateY(-5px); /* Elevación al pasar el mouse */
+            box-shadow: 0 8px 25px rgba(247, 99, 0, 0.2); /* Sombra más pronunciada */
+        }
+
+        /* Títulos dentro de las tarjetas */
+        .info-card h3 {
+            color: #f76300; /* Color corporativo para títulos */
+            margin-bottom: 15px;
+        }
+
+        /* =========================== */
+        /* VARIABLES DEL MIX DE MARKETING */
+        /* =========================== */
+        
+        /* Contenedores para las 4P del marketing (Producto, Precio, Plaza, Promoción) */
+        .mix-variable {
+            background: linear-gradient(135deg, #f76300 0%, #ff8533 100%); /* Gradiente corporativo */
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px; /* Bordes redondeados */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Títulos de las variables del mix */
+        .mix-variable h4 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        /* Descripción de las variables del mix */
+        .mix-variable p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.9; /* Ligeramente transparente para jerarquía */
+        }
+
+        /* =========================== */
+        /* ELEMENTOS DE DISEÑO Y BADGES */
+        /* =========================== */
+        
+        /* Badge para mostrar fechas importantes */
+        .date-badge {
+            background: #f76300; /* Color corporativo */
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 25px; /* Forma de píldora */
+            font-weight: bold;
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        /* =========================== */
+        /* BOTONES PERSONALIZADOS */
+        /* =========================== */
+        
+        /* Estilo base para botones corporativos */
         .btn-custom {
-            background: #f76300;
+            background: #f76300; /* Color corporativo */
             border: none;
             padding: 12px 30px;
             font-family: Calibri, Arial, sans-serif;
             font-weight: bold;
-            border-radius: 25px;
-            transition: all 0.3s ease;
+            border-radius: 25px; /* Bordes redondeados */
+            transition: all 0.3s ease; /* Transición suave */
             color: #ffffff;
         }
 
+        /* Efecto hover en botones personalizados */
         .btn-custom:hover {
-            background: #e55a00;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(247, 99, 0, 0.3);
+            background: #e55a00; /* Color más oscuro al hover */
+            transform: translateY(-2px); /* Efecto de elevación */
+            box-shadow: 0 5px 15px rgba(247, 99, 0, 0.3); /* Sombra al hover */
             color: #ffffff;
         }
 
+        /* =========================== */
+        /* FOOTER */
+        /* =========================== */
+        
+        /* Pie de página con fondo negro */
+        .footer {
+            background: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px; /* Separación del contenido principal */
+        }
+
+
+        /* =========================== */
+        /* TÍTULOS DE SECCIÓN */
+        /* =========================== */
+        
+        /* Estilo para títulos principales de cada sección */
         .section-title {
             text-align: center;
-            margin: 60px 0 40px;
+            margin: 60px 0 40px; /* Espaciado generoso arriba y abajo */
             font-family: Impact, Arial Black, sans-serif;
             font-size: 2.5rem;
             font-weight: normal;
             color: #000000;
-            position: relative;
+            position: relative; /* Para el pseudo-elemento decorativo */
         }
 
+        /* Línea decorativa debajo de los títulos de sección */
         .section-title::after {
-            content: '';
+            content: ''; /* Pseudo-elemento vacío */
             position: absolute;
             bottom: -10px;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%); /* Centrado horizontal */
             width: 80px;
             height: 4px;
-            background: #f76300;
+            background: #f76300; /* Color corporativo */
             border-radius: 2px;
         }
 
+        /* =========================== */
+        /* TIMELINE/CRONOGRAMA */
+        /* =========================== */
+        
+        /* Contenedor principal del timeline */
         .timeline {
             position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
+            max-width: 1000px; /* Ancho máximo para mejor legibilidad */
+            margin: 0 auto; /* Centrado horizontal */
         }
 
+        /* Línea vertical central del timeline */
         .timeline::after {
-            content: '';
+            content: ''; /* Pseudo-elemento para la línea */
             position: absolute;
             width: 4px;
-            background: #f76300;
+            background: #f76300; /* Color corporativo */
             top: 0;
             bottom: 0;
-            left: 50%;
-            margin-left: -2px;
+            left: 50%; /* Centrado horizontalmente */
+            margin-left: -2px; /* Ajuste para centrado perfecto */
         }
 
+        /* Elementos individuales del timeline */
         .timeline-item {
             padding: 10px 40px;
             position: relative;
             background-color: inherit;
-            width: 50%;
+            width: 50%; /* Ocupa la mitad del ancho */
         }
 
+        /* Círculos indicadores en la línea del timeline */
         .timeline-item::after {
-            content: '';
+            content: ''; /* Pseudo-elemento para el círculo */
             position: absolute;
             width: 20px;
             height: 20px;
-            right: -10px;
-            background-color: #f76300;
-            border: 4px solid #fff;
+            right: -10px; /* Posicionado en la línea central */
+            background-color: #f76300; /* Color corporativo */
+            border: 4px solid #fff; /* Borde blanco */
             top: 15px;
-            border-radius: 50%;
-            z-index: 1;
+            border-radius: 50%; /* Forma circular */
+            z-index: 1; /* Por encima de la línea */
         }
 
+        /* Elementos pares del timeline (lado derecho) */
         .timeline-item:nth-child(even) {
-            left: 50%;
+            left: 50%; /* Posicionado en el lado derecho */
         }
 
+        /* Círculos para elementos pares */
         .timeline-item:nth-child(even)::after {
-            left: -10px;
+            left: -10px; /* Posicionado en el lado izquierdo de la línea */
         }
 
+        /* Contenido de cada elemento del timeline */
         .timeline-content {
             padding: 20px 30px;
             background-color: #ffffff;
             position: relative;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border-left: 4px solid #f76300;
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra sutil */
+            transition: all 0.3s ease; /* Transición suave para hover */
+            border-left: 4px solid #f76300; /* Borde izquierdo corporativo */
         }
 
+        /* Efecto hover en contenido del timeline */
         .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(247, 99, 0, 0.2);
+            transform: translateY(-5px); /* Elevación al hover */
+            box-shadow: 0 8px 25px rgba(247, 99, 0, 0.2); /* Sombra más pronunciada */
         }
 
+        /* Títulos dentro del contenido del timeline */
         .timeline-content h4 {
             font-family: Impact, Arial Black, sans-serif;
             color: #000000;
             margin-bottom: 10px;
         }
 
+        /* Párrafos dentro del contenido del timeline */
         .timeline-content p {
             font-family: Calibri, Arial, sans-serif;
             color: #000000;
         }
 
+        /* Fechas en el timeline */
         .timeline-date {
-            color: #f76300;
+            color: #f76300; /* Color corporativo */
             font-family: Calibri, Arial, sans-serif;
             font-weight: bold;
             font-size: 1.1rem;
             margin-bottom: 10px;
         }
 
+        /* Sección de redes sociales */
         .social-section {
-            background: linear-gradient(135deg, #f76300 0%, #ff8533 100%);
+            background: linear-gradient(135deg, #f76300 0%, #ff8533 100%); /* Gradiente corporativo */
             padding: 60px 0;
             color: white;
         }
 
+        /* Contenedor de enlaces de redes sociales */
         .social-links {
             display: flex;
-            justify-content: center;
-            gap: 30px;
+            justify-content: center; /* Centrado horizontal */
+            gap: 30px; /* Espaciado entre iconos */
             margin-top: 40px;
         }
 
+        /* Estilo individual de cada enlace social */
         .social-link {
             display: inline-block;
             width: 60px;
             height: 60px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
+            background: rgba(255,255,255,0.2); /* Fondo semi-transparente */
+            border-radius: 50%; /* Forma circular */
             text-align: center;
-            line-height: 60px;
+            line-height: 60px; /* Centrado vertical del icono */
             color: #ffffff;
             font-size: 1.5rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease; /* Transición suave */
             text-decoration: none;
         }
 
+        /* Efecto hover en enlaces sociales */
         .social-link:hover {
-            background: #ffffff;
-            transform: translateY(-5px);
-            color: #f76300;
+            background: #ffffff; /* Fondo blanco al hover */
+            transform: translateY(-5px); /* Elevación */
+            color: #f76300; /* Color corporativo */
         }
 
+        /* Footer principal */
         .footer {
-            background: #000000;
+            background: #000000; /* Fondo negro */
             color: #ffffff;
             text-align: center;
             padding: 40px 0;
         }
         
+        /* Párrafos del footer */
         .footer p {
             font-family: Calibri, Arial, sans-serif;
             margin-bottom: 5px;
         }
 
+        /* Logo MMW en el footer */
         .mmw-logo {
             font-family: Impact, Arial Black, sans-serif;
             font-size: 1.8rem;
             font-weight: normal;
-            letter-spacing: 2px;
+            letter-spacing: 2px; /* Espaciado entre letras */
         }
 
+        /* Primera M del logo */
         .mmw-logo .m1 {
             color: #000000;
         }
 
+        /* Segunda M del logo */
         .mmw-logo .m2 {
-            color: #e6e1de;
+            color: #e6e1de; /* Color gris claro */
         }
 
+        /* W del logo */
         .mmw-logo .w {
             color: #000000;
         }
 
+        /* ===== ESTILOS DEL MODAL PARA CRONOGRAMA ===== */
+        /* Overlay de fondo del modal */
+        .modal-overlay {
+            display: none; /* Oculto por defecto */
+            position: fixed; /* Posición fija en pantalla */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente */
+            z-index: 9999; /* Nivel superior */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Contenedor principal del modal */
+        .modal-content {
+            background: white;
+            border-radius: 10px;
+            width: 90%;
+            height: 90%;
+            max-width: 1200px; /* Ancho máximo */
+            max-height: 800px; /* Alto máximo */
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra pronunciada */
+        }
+
+        /* Cabecera del modal */
+        .modal-header {
+            background: linear-gradient(135deg, #f76300, #ff8533); /* Gradiente corporativo */
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px 10px 0 0; /* Bordes redondeados superiores */
+            display: flex;
+            justify-content: space-between; /* Espaciado entre título y botón */
+            align-items: center;
+        }
+
+        /* Botón de cerrar modal */
+        .modal-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%; /* Forma circular */
+            transition: background-color 0.3s; /* Transición suave */
+        }
+
+        /* Efecto hover del botón cerrar */
+        .modal-close:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Fondo semi-transparente al hover */
+        }
+
+        /* Iframe que contiene el contenido de Genially */
+        .modal-iframe {
+            width: 100%;
+            height: calc(100% - 60px); /* Altura completa menos la cabecera */
+            border: none; /* Sin bordes */
+            border-radius: 0 0 10px 10px; /* Bordes redondeados inferiores */
+        }
+
+        /* Efecto hover en elementos clickeables del timeline */
+        .clickable-timeline-item:hover h4 {
+            color: #f76300; /* Color corporativo al hover */
+        }
+
+        /* ===== RESPONSIVE DESIGN - DISPOSITIVOS MÓVILES ===== */
         @media (max-width: 768px) {
+            /* Título del carousel más pequeño en móviles */
             .carousel-title {
                 font-size: 2.5rem;
             }
             
+            /* Línea central del timeline ajustada para móviles */
             .timeline::after {
                 left: 31px;
             }
             
+            /* Elementos del timeline en una sola columna */
             .timeline-item {
                 width: 100%;
-                padding-left: 70px;
+                padding-left: 70px; /* Espaciado desde la línea */
                 padding-right: 25px;
             }
             
+            /* Círculos del timeline ajustados */
             .timeline-item::after {
                 left: 21px;
             }
             
+            /* Todos los elementos alineados a la izquierda */
             .timeline-item:nth-child(even) {
                 left: 0%;
             }
             
+            /* Enlaces sociales en múltiples filas */
             .social-links {
-                flex-wrap: wrap;
-                gap: 20px;
+                flex-wrap: wrap; /* Permite salto de línea */
+                gap: 20px; /* Espaciado reducido */
             }
         }
     </style>
@@ -316,7 +538,10 @@
                         <a class='nav-link' href='#home'>Inicio</a>
                     </li>
                     <li class='nav-item'>
-                        <a class='nav-link' href='#cronograma'>Cronograma</a>
+                        <a class='nav-link' href='./actividades.html'>Actividades</a> <!--TIPOS DE ACTIVIDADES-->
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='#Congreso'>Congreso</a>
                     </li>
                     <li class='nav-item dropdown'>
                         <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown'>
@@ -374,18 +599,77 @@
         </button>
     </div>
 
+    <!-- Información del Evento -->
+    <section class='container my-5'>
+        <h2 class='section-title'>Información del Evento</h2>
+        
+        <div class='row'>
+            <div class='col-md-4'>
+                <div class='info-card'>
+                    <h3><i class='fas fa-lightbulb'></i> Concepto</h3>
+                    <p>Una semana de mercadeo en la que existan actividades dirigidas a la comunidad educativa del CGMLTL, relacionadas con el marketing, permitiendo evidenciar las prácticas formativas y la actualización de conocimientos en el área.</p>
+                </div>
+            </div>
+            <div class='col-md-4'>
+                <div class='info-card'>
+                    <h3><i class='fas fa-target'></i> Objetivo</h3>
+                    <p>Visibilizar el área de Mercadeo del Centro con un espacio de interacción que acerque a los distintos públicos relacionados con ella, para generar intercambios de conocimiento y praxis empresarial.</p>
+                    <p><strong>Generar espacios de interacción</strong> para los distintos públicos del Centro de Formación, en pro de impulsar la disciplina del mercadeo como eje fundamental para el desarrollo y crecimiento de las empresas.</p>
+                </div>
+            </div>
+            <div class='col-md-4'>
+                <div class='info-card'>
+                    <h3><i class='fas fa-users'></i> Público</h3>
+                    <p>Comunidad educativa, empresas patrocinadoras, aliadas y de aplicación de proyectos del Centro de Gestión de Mercados, Logística y Tecnologías de la Información.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ejes Temáticos -->
+    <section class='container my-5'>
+        <h2 class='section-title'>Ejes Temáticos - Las 4P del Marketing</h2>
+        
+        <div class='row'>
+            <div class='col-md-6 col-lg-3'>
+                <div class='mix-variable'>
+                    <h4><i class='fas fa-box'></i> Producto</h4>
+                    <p>Estrategia de producto, propuesta de valor, niveles de producto, propuesta de servicio, prototipado y diseño, Branding, packaging...</p>
+                </div>
+            </div>
+            <div class='col-md-6 col-lg-3'>
+                <div class='mix-variable'>
+                    <h4><i class='fas fa-dollar-sign'></i> Precio</h4>
+                    <p>Oferta y demanda, percepción de valor, costos, márgenes, punto de equilibrio, competencia, estrategia para fijación de precios, márgenes de negociación al intermediario...</p>
+                </div>
+            </div>
+            <div class='col-md-6 col-lg-3'>
+                <div class='mix-variable'>
+                    <h4><i class='fas fa-map-marker-alt'></i> Plaza</h4>
+                    <p>Cobertura, cadena de valor, logística, estrategia, longitud y anchura, intermediarios, ecommerce, formato comercial, conflictos de canal, venta directa...</p>
+                </div>
+            </div>
+            <div class='col-md-6 col-lg-3'>
+                <div class='mix-variable'>
+                    <h4><i class='fas fa-bullhorn'></i> Promoción</h4>
+                    <p>Estrategias de comunicación, relaciones públicas, fuerza de ventas, merchandising, marketing digital, promoción de ventas, publicidad, Marketing directo...</p>
+                </div>
+            </div>
+        </div>
+    </section>  <!-- modificar el css importante dejar como el 2021 quitandolo de esa version-->
+
     <!-- Cronograma Section -->
     <section id='cronograma' class='py-5'>
         <div class='container'>
-            <h2 class='section-title'>Cronograma de Eventos</h2>
+            <h2 class='section-title'>Cronograma MMW 2025</h2>
             <div class='timeline'>
-                <div class='timeline-item'>
+                <div class='timeline-item clickable-timeline-item' onclick='openModal()'>
                     <div class='timeline-content'>
                         <div class='timeline-date'>
                             <i class='fas fa-calendar-alt me-2'></i>10 de Noviembre, 2025
                         </div>
-                        <h4>Conferencia Inaugural</h4>
-                        <p>Apertura oficial del Marketing Mix Week 2025 con keynote speakers internacionales.</p>
+                        <h4>Lunes - Producto</h4>
+                        <p>Haz clic para ver el cronograma detallado del día.</p>
                     </div>
                 </div>
                 <div class='timeline-item'>
@@ -446,9 +730,6 @@
                 <a href='https://www.youtube.com/channel/UCvS84FXTj8iHG3cuLhsXCNw' target='_blank' class='social-link' title='YouTube'>
                     <i class='fab fa-youtube'></i>
                 </a>
-                <a href='https://linktr.ee/mmwsena' target='_blank' class='social-link' title='Linktree'>
-                    <i class='fas fa-link'></i>
-                </a>
             </div>
         </div>
     </section>
@@ -460,6 +741,64 @@
             <p>Un evento organizado por SENA - Servicio Nacional de Aprendizaje</p>
         </div>
     </footer>
+
+    <!-- Modal HTML -->
+    <div id='scheduleModal' class='modal-overlay' onclick='closeModal(event)'>
+        <div class='modal-content' onclick='event.stopPropagation()'>
+            <div class='modal-header'>
+                <h3>Cronograma Detallado - Lunes</h3>
+                <button class='modal-close' onclick='closeModal()' aria-label='Cerrar modal'>
+                    <i class='fas fa-times'></i>
+                </button>
+            </div>
+            <iframe id='modalIframe' class='modal-iframe' src='' title='Cronograma Detallado'></iframe>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            const modal = document.getElementById('scheduleModal');
+            const iframe = document.getElementById('modalIframe');
+            
+            // Set the Genially URL
+            iframe.src = 'https://view.genially.com/68a8810fc05f69b775b8f6a0/interactive-content-4ta-oferta-de-formacion-presencial-2025-cgmlti';
+            
+            // Show modal with animation
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.style.opacity = '1';
+            }, 10);
+            
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(event) {
+            if (event && event.target !== event.currentTarget && !event.target.classList.contains('modal-close') && !event.target.classList.contains('fa-times')) {
+                return;
+            }
+            
+            const modal = document.getElementById('scheduleModal');
+            const iframe = document.getElementById('modalIframe');
+            
+            // Hide modal with animation
+            modal.style.opacity = '0';
+            setTimeout(() => {
+                modal.style.display = 'none';
+                iframe.src = ''; // Clear iframe to stop loading
+            }, 300);
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
 
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
     <script>
