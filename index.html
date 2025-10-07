@@ -28,6 +28,7 @@
             font-family: Calibri, Arial, sans-serif; /* Fuente principal del sitio */
             line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
             color: #000000; /* Color de texto negro */
+            padding-top: 80px; /* Espacio para compensar el navbar fijo */
         }
         
         /* Configuración de títulos con fuente Impact para impacto visual */
@@ -44,6 +45,10 @@
         .navbar {
             background: linear-gradient(135deg, #f76300 0%, #ff8533 100%) !important; /* Gradiente naranja corporativo */
             box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra sutil para profundidad */
+            position: fixed; /* Mantiene el navbar fijo en la parte superior */
+            top: 0; /* Posicionado en la parte superior */
+            width: 100%; /* Ocupa todo el ancho */
+            z-index: 1030; /* Por encima de otros elementos */
         }
 
         /* Logo/marca de la empresa en la navegación */
@@ -79,6 +84,34 @@
             height: 500px; /* Altura fija para consistencia */
             background: linear-gradient(135deg, #f76300 0%, #ff8533 100%); /* Fondo con gradiente corporativo */
             position: relative; /* Para posicionamiento absoluto del contenido */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Overlay difuminado para mejorar legibilidad del texto */
+        .carousel-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /*background: linear-gradient(135deg, rgba(232, 135, 70, 0.599) 0%, rgba(240, 145, 81, 0.567) 100%);*/
+            z-index: 1;
+        }
+
+        /* Slides específicos con imágenes de fondo */
+        .carousel-item:nth-child(1) {
+            background-image: url('./img/Banner-01.png');
+        }
+
+        .carousel-item:nth-child(2) {
+            background-image: url('./img/Banner-02.png');
+        }
+
+        .carousel-item:nth-child(3) {
+            background-image: url('./img/Banner-03.png');
         }
 
         /* Contenido centrado dentro del carrusel */
@@ -89,24 +122,29 @@
             transform: translate(-50%, -50%); /* Centrado perfecto horizontal y vertical */
             text-align: center;
             color: #ffffff;
-            z-index: 2; /* Asegura que esté por encima del fondo */
+            z-index: 3; /* Asegura que esté por encima del overlay difuminado */
         }
 
         /* Título principal del carrusel */
         .carousel-title {
-            font-family: Impact, Arial Black, sans-serif;
+            font-family: Impact, Arial rgb(9, 6, 6), sans-serif;
             font-size: 3.5rem; /* Tamaño grande para impacto */
             font-weight: normal;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para mejor legibilidad */
+            text-shadow: 2px 2px 4px rgba(19, 17, 17, 0.5); /* Sombra para mejor legibilidad */
+            -webkit-text-stroke: 0.9px rgb(24, 20, 20); /* Grosor y color del contorno */
         }
 
         /* Subtítulo del carrusel */
         .carousel-subtitle {
             font-family: Calibri, Arial, sans-serif;
-            font-size: 1.5rem;
+            font-size: 1.9rem;
             margin-bottom: 30px;
-            opacity: 0.9; /* Ligeramente transparente para jerarquía visual */
+            color: #ffffff; /* Color de texto blanco */
+            -webkit-text-stroke: 1px #000000; /* Borde negro del texto */
+            text-stroke: 2px #000000; /* Borde negro del texto para otros navegadores */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra del texto */
+            font-weight: bold; /* Texto en negrita para mejor definición */
         }
 
         /* =========================== */
@@ -573,6 +611,7 @@
                 <div class='carousel-content'>
                     <h1 class='carousel-title'>Marketing Mix Week 2025</h1>
                     <p class='carousel-subtitle'>La 4ta semana del Mercadeo del SENA CGMLTI</p>
+                    <br></br>
                     <a href='#cronograma' class='btn btn-custom btn-lg'>Ver Cronograma</a>
                 </div>
             </div>
@@ -580,6 +619,7 @@
                 <div class='carousel-content'>
                     <h1 class='carousel-title'>Actividades para todos</h1>
                     <p class='carousel-subtitle'>Conectando con todas las audiencias</p>
+                    <br></br>
                     <a href='#redes' class='btn btn-custom btn-lg'>Síguenos</a>
                 </div>
             </div>
@@ -587,7 +627,8 @@
                 <div class='carousel-content'>
                     <h1 class='carousel-title'>Únete a la Experiencia</h1>
                     <p class='carousel-subtitle'>Charlas, Casos, Cápsulas, Olimpiadas, Destrezas y Proyectos</p>
-                    <a href='#cronograma' class='btn btn-custom btn-lg'>Inscríbete</a>
+                    <br></br>
+                    <a href='./actividades.html' class='btn btn-custom btn-lg'>Actividades</a>
                 </div>
             </div>
         </div>
