@@ -178,9 +178,37 @@
 
         /* Carousel */
         .carousel-item {
-            height: 500px;
-            background: linear-gradient(135deg, #f76300 0%, #ff8533 100%);
-            position: relative;
+            height: 550px; /* Altura fija para consistencia */
+            background: linear-gradient(135deg, #f76300 0%, #ff8533 100%); /* Fondo con gradiente corporativo */
+            position: relative; /* Para posicionamiento absoluto del contenido */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+         /* Overlay difuminado para mejorar legibilidad del texto */
+        .carousel-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /*background: linear-gradient(135deg, rgba(232, 135, 70, 0.599) 0%, rgba(240, 145, 81, 0.567) 100%);*/
+            z-index: 1;
+        }
+
+        /* Slides específicos con imágenes de fondo */
+        .carousel-item:nth-child(1) {
+            background-image: url('./img/Banner-01-Congreso.png');
+        }
+
+        .carousel-item:nth-child(2) {
+            background-image: url('./img/Banner-02-Congreso.png');
+        }
+
+        .carousel-item:nth-child(3) {
+            background-image: url('./img/Banner-03-Congreso.png');
         }
 
         .carousel-content {
@@ -193,18 +221,26 @@
             z-index: 2;
         }
 
+        /* Título principal del carrusel */
         .carousel-title {
-            font-family: Impact, Arial Black, sans-serif;
-            font-size: 3.5rem;
+            font-family: Impact, Arial rgb(9, 6, 6), sans-serif;
+            font-size: 3.5rem; /* Tamaño grande para impacto */
+            font-weight: normal;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(19, 17, 17, 0.5); /* Sombra para mejor legibilidad */
+            -webkit-text-stroke: 0.9px rgb(24, 20, 20); /* Grosor y color del contorno */
         }
 
+        /* Subtítulo del carrusel */
         .carousel-subtitle {
             font-family: Calibri, Arial, sans-serif;
-            font-size: 1.5rem;
-            opacity: 0.9;
+            font-size: 1.9rem;
             margin-bottom: 30px;
+            color: #ffffff; /* Color de texto blanco */
+            -webkit-text-stroke: 1px #000000; /* Borde negro del texto */
+            text-stroke: 2px #000000; /* Borde negro del texto para otros navegadores */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra del texto */
+            font-weight: bold; /* Texto en negrita para mejor definición */
         }
 
         /* Footer */
@@ -244,6 +280,29 @@
         @media (max-width: 768px) {
             .qr-code {
                 max-width: 150px;
+            }
+        }
+        
+        /* Estilo para el banner de fechas clave congreso */
+        .banner-fechas {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 9px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        @media (max-width: 768px) {
+            .banner-fechas {
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .banner-fechas {
+                max-width: 250px;
             }
         }
     </style>
@@ -288,6 +347,8 @@
                 <div class='carousel-content'>
                     <h1 class='carousel-title'>10 al 14 de Noviembre</h1>
                     <p class='carousel-subtitle'>Modalidad presencial y virtual</p>
+                    <br></br>
+                    <br></br>
                     <a href='#lineas-tematicas' class='btn btn-custom btn-lg'>Ver Líneas Temáticas</a>
                 </div>
             </div>
@@ -567,9 +628,7 @@
                 <div class='info-card'>
                     <h4>🎯 Fechas Clave</h4>
                     <p>Si su intención es participar como <strong>asistente al evento</strong>, regístrate en el siguiente enlace:</p>
-                    <div class='text-center mt-3'>
-                        <a href='#' class='btn btn-custom'>📝 Registro de Asistentes</a>
-                    </div>
+                    <img src='./img/Banner-02-Congreso.png' alt='Banner Fechas Clave' class='img-fluid banner-fechas'>
                 </div>
             </div>
             
