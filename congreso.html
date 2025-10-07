@@ -228,6 +228,24 @@
                 font-size: 1.2rem;
             }
         }
+        
+        /* Estilo para el código QR */
+        .qr-code {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .qr-code {
+                max-width: 150px;
+            }
+        }
     </style>
 </head>
 
@@ -236,7 +254,7 @@
     <nav class='navbar navbar-expand-lg navbar-dark'>
         <div class='container'>
             <a class='navbar-brand' href='index.html'>
-                <img src='logo.png' alt='Logo SENA' height='60' class='me-2'>
+                <img src='logo.png' alt='Logo mmw' height='60' class='me-2'>
             </a>
             <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav'>
                 <span class='navbar-toggler-icon'></span>
@@ -263,21 +281,21 @@
                 <div class='carousel-content'>
                     <h1 class='carousel-title'>I CONGRESO DE ACTUALIZACIÓN EN MARKETING</h1>
                     <p class='carousel-subtitle'>"Marketing holístico: evolución sin pausa"</p>
-                    <a href='#requisitos' class='btn btn-custom btn-lg'>Participar</a>
+                    <a href='https://docs.google.com/forms/d/e/1FAIpQLSfKkIwLlZKTCssLB97nER6AUEZDnJqMi3wDoyXZ7uy0ieMckg/viewform?fbzx=-8001427776133920897' class='btn btn-custom btn-lg'>Inscríbete</a>
                 </div>
             </div>
             <div class='carousel-item'>
                 <div class='carousel-content'>
                     <h1 class='carousel-title'>10 al 14 de Noviembre</h1>
                     <p class='carousel-subtitle'>Modalidad presencial y virtual</p>
-                    <a href='#ejes' class='btn btn-custom btn-lg'>Ver Ejes Temáticos</a>
+                    <a href='#lineas-tematicas' class='btn btn-custom btn-lg'>Ver Líneas Temáticas</a>
                 </div>
             </div>
             <div class='carousel-item'>
                 <div class='carousel-content'>
                     <h1 class='carousel-title'>Centro CGMLTI - SENA</h1>
                     <p class='carousel-subtitle'>IV Semana del Marketing Mix</p>
-                    <a href='#objetivo' class='btn btn-custom btn-lg'>Conoce Más</a>
+                    <a href='#' class='btn btn-custom btn-lg' data-bs-toggle='modal' data-bs-target='#justificacionModal'>Justificación del Evento</a>
                 </div>
             </div>
         </div>
@@ -305,7 +323,7 @@
                 <div class='info-card'>
                     <h3><i class='fas fa-target'></i> Objetivo</h3>
                     <p>Acercar a los participantes del congreso a una <strong>comprensión integral y en evolución del marketing</strong>, desde su carácter multidimensional e interdisciplinar.</p>
-                    <p><strong>Propiciar una reflexión crítica</strong> sobre los retos y oportunidades que plantea para la formación académica, la investigación y la gestión empresarial y social.</p>
+                    <p><strong>Con el fin de propiciar una reflexión crítica</strong> sobre los retos y oportunidades que plantea para la formación académica, la investigación y la gestión empresarial y social en contextos diversos.</p>
                 </div>
             </div>
             <div class='col-md-4'>
@@ -321,27 +339,29 @@
     </section>
 
     <!-- Líneas Temáticas -->
-    <section class='container my-5'>
+    <section id='lineas-tematicas' class='container my-5'>
         <h2 class='section-title'>📂 Líneas Temáticas</h2>
         
         <div class='row'>
             <div class='col-md-12'>
                 <div class='thematic-line' onclick='toggleContent("tema1")'>
                     <h4>1️⃣ Evolución histórica del marketing</h4>
-                    <p><em>Revisar cómo ha cambiado el marketing a lo largo de más de un siglo, pasando de un enfoque centrado en el producto y la transacción a uno que integra dimensiones sociales, digitales y holísticas.</em></p>
+                    <p><em>Esta línea busca revisar cómo ha cambiado el marketing a lo largo de más de un siglo, pasando de un enfoque centrado en el producto y la transacción a uno que integra dimensiones sociales, digitales y holísticas. El propósito es que los ponentes expliquen los hitos, rupturas y continuidades que han marcado esta evolución, destacando ejemplos que muestren cómo las organizaciones y la academia han reconfigurado su manera de entender el marketing.</em></p>
                     <div id='tema1' class='thematic-content'>
                         <div class='row'>
                             <div class='col-md-6'>
                                 <h5>📦 1. Marketing tradicional y su consolidación</h5>
+                                <p><em>Se refiere al surgimiento del marketing como disciplina en el siglo XX, con la formulación del marketing mix (4P’s: producto, precio, plaza, promoción). Aquí se analiza cómo se concibió inicialmente el marketing como una herramienta para organizar la oferta y la demanda dentro de los mercados.</em></p>
                                 <p><strong>Temas clave:</strong></p>
                                 <ul>
-                                    <li>Origen y consolidación del marketing mix (4P's)</li>
+                                    <li>Origen y consolidación del marketing mix.</li>
                                     <li>Orientación a la producción y distribución</li>
                                     <li>Perspectiva transaccional: producto → consumidor</li>
                                     <li>Limitaciones del enfoque clásico</li>
                                 </ul>
                                 
                                 <h5>🤝 2. Del producto al cliente: el giro relacional</h5>
+                                <p><em>A partir de los años 80, el marketing incorpora la noción de cliente como centro de la estrategia. Se pasa de “vender productos” a “construir valor y relaciones de largo plazo.</em></p>
                                 <p><strong>Temas clave:</strong></p>
                                 <ul>
                                     <li>Fidelización y lealtad del cliente</li>
@@ -351,9 +371,10 @@
                                 </ul>
                                 
                                 <h5>🌱 3. Marketing societal y responsabilidad social</h5>
+                                <p><em>Surge la necesidad de que las prácticas de marketing también contemplen el bienestar de la sociedad y el planeta. El consumidor ya no solo compra productos, sino que espera responsabilidad y ética.</em></p>
                                 <p><strong>Temas clave:</strong></p>
                                 <ul>
-                                    <li>Marketing societal como ampliación de la perspectiva</li>
+                                    <li>Marketing societal como ampliación de la perspectiva del marketing.</li>
                                     <li>Sostenibilidad y marketing verde</li>
                                     <li>Ética del marketing y consumo responsable</li>
                                     <li>Diversidad, equidad e inclusión</li>
@@ -361,6 +382,7 @@
                             </div>
                             <div class='col-md-6'>
                                 <h5>🔄 4. Marketing holístico como paradigma integrador</h5>
+                                <p><em>Kotler y Keller proponen que el marketing debe entenderse de manera integral, donde “todo importa”. Incluye marketing interno, integrado, relacional y socialmente responsable.</em></p>
                                 <p><strong>Temas clave:</strong></p>
                                 <ul>
                                     <li>Marketing interno: compromiso del talento humano</li>
@@ -370,6 +392,7 @@
                                 </ul>
                                 
                                 <h5>🚀 5. De lo digital a lo disruptivo: marketing 4.0 a 6.0</h5>
+                                <p><em>El marketing entra en la era digital, con big data, IA, omnicanalidad y experiencias inmersivas. Esto redefine la relación con los clientes y exige un cambio radical en la forma de diseñar estrategias.</em></p>
                                 <p><strong>Temas clave:</strong></p>
                                 <ul>
                                     <li>Marketing 4.0 (digital y conectado)</li>
@@ -394,7 +417,6 @@
                             <div class='col-md-6'>
                                 <h5>🤖 1. Marketing digital y tecnológico</h5>
                                 <p><strong>Descripción:</strong> Se centra en la revolución digital y en cómo ha transformado la forma en que las empresas se relacionan con sus clientes. Incluye redes sociales, IA, big data, automatización y experiencias inmersivas.</p>
-                                <p><strong>Lo que se espera de los ponentes:</strong> Casos de transformación digital en organizaciones, experiencias de uso de IA y omnicanalidad, reflexiones sobre límites éticos de la hiperpersonalización entre otros temas relacionados.</p>
                                 <p><strong>Temas clave:</strong></p>
                                 <ul>
                                     <li>Estrategias de marketing en entornos digitales</li>
@@ -405,7 +427,6 @@
                                 
                                 <h5>🌱 2. Marketing social y de impacto</h5>
                                 <p><strong>Descripción:</strong> Analiza cómo el marketing puede contribuir a cambios de comportamiento, a la equidad y a la sostenibilidad. Es un campo con alto impacto comunitario y social.</p>
-                                <p><strong>Lo que se espera de los ponentes:</strong> Presentación de campañas sociales exitosas, proyectos de sostenibilidad empresarial, o análisis crítico de prácticas de greenwashing.</p>
                                 <p><strong>Temas clave:</strong></p>
                                 <ul>
                                     <li>Marketing social (campañas de salud, educación, ambiente)</li>
@@ -417,7 +438,6 @@
                             <div class='col-md-6'>
                                 <h5>🎭 3. Marketing cultural y territorial</h5>
                                 <p><strong>Descripción:</strong> Explora cómo el marketing puede fortalecer identidades culturales, promover territorios y dinamizar economías locales. Abarca branding cultural, turismo y patrimonio.</p>
-                                <p><strong>Lo que se espera de los ponentes:</strong> Casos de branding territorial, estrategias para turismo cultural, experiencias en gestión de marca cultural o patrimonial.</p>
                                 <p><strong>Temas clave:</strong></p>
                                 <ul>
                                     <li>Marketing cultural y creativo</li>
@@ -426,9 +446,8 @@
                                     <li>Identidad, memoria y territorio</li>
                                 </ul>
                                 
-                                <h5>⚽🗳️ 4. Marketing político y deportivo</h5>
-                                <p><strong>Descripción:</strong> Muestra cómo el marketing se aplica en contextos de alto impacto social: la política y el deporte. Se centra en cómo se gestionan la imagen, el posicionamiento y las comunidades de seguidores.</p>
-                                <p><strong>Lo que se espera de los ponentes:</strong> Ejemplos de campañas electorales, estrategias de marketing deportivo, análisis del rol de redes sociales en política y deporte.</p>
+                                <h5>⚽🗳️ 4. Marketing especializado</h5>
+                                <p><strong>Descripción:</strong> Muestra cómo el marketing se aplica en contextos de alto impacto social: la política y el deporte entre otras opciones. Se centra en cómo se gestionan la imagen, el posicionamiento y las comunidades de seguidores.</p>
                                 <p><strong>Temas clave:</strong></p>
                                 <ul>
                                     <li>Comunicación política y electoral</li>
@@ -439,7 +458,6 @@
                                 
                                 <h5>✨ 5. Marketing experiencial y relacional</h5>
                                 <p><strong>Descripción:</strong> Resalta la importancia de generar experiencias memorables y vínculos emocionales entre marcas y consumidores. El marketing ya no se limita a la compra, sino a todo el viaje del cliente.</p>
-                                <p><strong>Lo que se espera de los ponentes:</strong> Ejemplos de storytelling, estrategias de fidelización, casos de marketing sensorial.</p>
                                 <p><strong>Temas clave:</strong></p>
                                 <ul>
                                     <li>Customer Experience (CX)</li>
@@ -541,13 +559,13 @@
     </section>
 
     <!-- Requisitos de Participación -->
-    <section class='container my-5'>
-        <h2 class='section-title'>📋 Requisitos de Participación</h2>
+    <section id='informacion-importante' class='container my-5'>
+        <h2 class='section-title'>📋 Información importante</h2>
         
         <div class='row'>
             <div class='col-md-6'>
                 <div class='info-card'>
-                    <h4>👥 Para Asistentes</h4>
+                    <h4>👥 Fechas Clave</h4>
                     <p>Si su intención es participar como <strong>asistente al evento</strong>, regístrate en el siguiente enlace:</p>
                     <div class='text-center mt-3'>
                         <a href='#' class='btn btn-custom'>📝 Registro de Asistentes</a>
@@ -557,63 +575,15 @@
             
             <div class='col-md-6'>
                 <div class='info-card'>
-                    <h4>🎤 Para Ponentes</h4>
-                    <p>Si su intención es participar como <strong>ponente</strong>, debes cumplir con los siguientes requisitos:</p>
-                    
-                    <h5>📋 Requerimientos para la presentación de las ponencias:</h5>
-                    <ul>
-                        <li>Ser experto en los temas del eje temático al que se postula</li>
-                        <li>Registrarse en formulario para inscripción de ponentes</li>
-                    </ul>
+                    <h4>🎤 ¿Cómo Inscribirte?</h4>
+                    <p>Para inscribirte puedes escanear el siguiente código QR</p>
+
+                    <img src='./QRcongreso.png' alt='Código QR' class='img-fluid qr-code'>
+
+                    <p>Tambien puedes dar click en el botón para ir al formulario de inscripción.</p>
                     
                     <div class='text-center mt-3'>
-                        <a href='#' class='btn btn-custom'>🎯 Inscripción de Ponentes</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class='row mt-4'>
-            <div class='col-md-12'>
-                <div class='info-card'>
-                    <h4>📝 Información Requerida para Ponentes</h4>
-                    <div class='row'>
-                        <div class='col-md-6'>
-                            <h5>📋 Datos Personales:</h5>
-                            <ul>
-                                <li>Nombres y apellidos completos</li>
-                                <li>Tipo y documento de identidad</li>
-                                <li>Correo electrónico y número de celular (acceso a WhatsApp)</li>
-                                <li>Identificar filiación/empresa y cargo</li>
-                                <li>Fotografía con peso máximo de 1 MB en formato JPG o PNG</li>
-                            </ul>
-                            
-                            <h5>🎯 Propuesta Académica:</h5>
-                            <ul>
-                                <li><strong>Presentación del ponente</strong> (máximo 150 palabras): formación profesional, experiencia en investigación o laboral, aportes al campo del marketing, experiencia puntual en el tema de la ponencia</li>
-                                <li><strong>Título de la ponencia</strong> acorde con el objetivo del congreso</li>
-                                <li><strong>Resumen de ponencia</strong> para verificación de pertinencia (300 palabras máximo)</li>
-                            </ul>
-                        </div>
-                        
-                        <div class='col-md-6'>
-                            <h5>⏰ Proceso y Compromisos:</h5>
-                            <ul>
-                                <li>Una vez informado de aceptación de ponencia, enviar el documento con presentación según plantilla establecida de acuerdo con fechas clave</li>
-                                <li>Mantener contacto con organizadores del congreso frente a dudas e inquietudes</li>
-                                <li><strong>Tiempo de ponencia:</strong> 30 minutos incluidos 10 minutos para responder preguntas (se indicará durante la ponencia el cumplimiento de tiempo)</li>
-                            </ul>
-                            
-                            <h5>🏆 Beneficios:</h5>
-                            <ul>
-                                <li>El ponente obtendrá un <strong>certificado por participación</strong></li>
-                                <li>Pueden postularse ponentes <strong>nacionales e internacionales</strong></li>
-                            </ul>
-                            
-                            <div class='alert alert-info mt-3'>
-                                <strong>📌 Nota:</strong> Para su inscripción ingresar al enlace correspondiente.
-                            </div>
-                        </div>
+                        <a href='https://docs.google.com/forms/d/e/1FAIpQLSfKkIwLlZKTCssLB97nER6AUEZDnJqMi3wDoyXZ7uy0ieMckg/viewform?fbzx=-8001427776133920897' class='btn btn-custom'>🎯 Inscripción de Ponentes</a>
                     </div>
                 </div>
             </div>
@@ -649,5 +619,30 @@
             }
         }
     </script>
+
+    <!-- Modal de Justificación del Congreso -->
+    <div class="modal fade" id="justificacionModal" tabindex="-1" aria-labelledby="justificacionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="justificacionModalLabel">Justificación del Congreso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>El I Congreso de Actualización en Marketing surge de la necesidad de reconocer que el marketing no es un campo estático, sino un <strong>sistema en constante adaptación y evolución</strong>, configurado históricamente a partir de transformaciones sociales, económicas y culturales. La revisión de la literatura muestra que el pensamiento en marketing ha atravesado <strong>cuatro eras fundamentales</strong> (Wilkie & Moore, 2003): desde su fundación como campo académico centrado en la distribución (1900–1920), pasando por la consolidación institucional y la reflexión sobre su función social (1920–1950), hasta el auge del paradigma gerencial y cuantitativo (1950–1980), y la posterior fragmentación en múltiples ramas y especializaciones (1980 en adelante).</p>
+                    
+                    <p>Estos cambios han puesto en evidencia que el marketing no puede comprenderse únicamente como un instrumento transaccional, sino como una <strong>disciplina interdisciplinar</strong> que dialoga con la economía, la psicología, la sociología, la antropología, la estadística y, más recientemente, con la tecnología digital y la sostenibilidad ambiental. Sin embargo, este crecimiento también ha traído consigo el riesgo de la <strong>fragmentación</strong> y la pérdida de una visión integradora que conecte las diferentes ramas y enfoques.</p>
+                    
+                    <p>En este contexto, el marco del <strong>marketing holístico</strong> (Kotler & Keller, 2012) ofrece un horizonte conceptual pertinente, al plantear que "todo importa en marketing" y que resulta imprescindible una <strong>perspectiva amplia, integrada y sistémica</strong>. Esta mirada articula cuatro dimensiones fundamentales: el marketing de relaciones, el marketing interno, el marketing integrado y el marketing socialmente responsable. Dichas dimensiones permiten comprender cómo conviven y se relacionan ramas como el marketing digital, cultural, territorial, social, verde, deportivo, político o relacional, otorgándoles coherencia en un solo sistema.</p>
+                    
+                    <p>Así, el congreso se propone como un espacio académico y profesional para revisar el trayecto histórico del marketing (1.0 a 6.0) y, al mismo tiempo, debatir su diversificación en múltiples ramas, situándose bajo la visión de integralidad que plantea el marketing holístico. De esta manera, se busca <strong>fortalecer la formación de profesionales y organizaciones</strong> para que se adapten a las nuevas exigencias del mercado y de la sociedad en sus procesos de interacción siendo capaces de responder con innovación, responsabilidad social, sostenibilidad y pertinencia contextual.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
