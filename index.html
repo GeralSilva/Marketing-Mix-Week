@@ -623,6 +623,23 @@
                 font-size: 1.3rem;
             }
         }
+        /* Badges de jornada (cronograma) */
+        .schedule-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+        .schedule-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 9999px; font-weight: 700; font-size: 0.95rem; border: 1px solid transparent; }
+        .schedule-badge i { font-size: 1rem; }
+        .badge-morning { background: #fff3cd; color: #7a5e00; border-color: #ffe69c; }
+        .badge-afternoon { background: #ffe0b2; color: #8a4f00; border-color: #ffcc80; }
+        .badge-night { background: #1e3a8a; color: #e3f2fd; border-color: #3b82f6; }
+        .badge-location { background: #e0f2f1; color: #00695c; border-color: #80cbc4; }
+
+        @media (max-width: 768px) {
+            .schedule-badge { font-size: 0.9rem; padding: 6px 10px; }
+            .schedule-badges { gap: 8px; }
+        }
+
+        @media (max-width: 480px) {
+            .schedule-badge { font-size: 0.85rem; padding: 5px 10px; }
+        }
     </style>
 </head>
 <body>
@@ -774,8 +791,11 @@
                         <div class='timeline-date'>
                             <i class='fas fa-calendar-alt me-2'></i>10 de Noviembre, 2025
                         </div>
-                        <h4>Lunes - Producto</h4>
+                        <h4>Lunes - Marketing y Evolución</h4>
                         <p>Haz clic para ver el cronograma detallado del día.</p>
+                        <div class='schedule-badges'>
+                            <span class='schedule-badge badge-morning'><i class='fas fa-sun'></i> Mañana</span>
+                        </div>
                     </div>
                 </div>
                 <div class='timeline-item'>
@@ -783,8 +803,11 @@
                         <div class='timeline-date'>
                             <i class='fas fa-calendar-alt me-2'></i>11 de Noviembre, 2025
                         </div>
-                        <h4>Martes - Precio</h4>
+                        <h4>Martes - Marketing y Tendencias</h4>
                         <p>Haz clic para ver el cronograma detallado del día.</p>
+                        <div class='schedule-badges'>
+                            <span class='schedule-badge badge-afternoon'><i class='fas fa-clock'></i> Tarde</span>
+                        </div>
                     </div>
                 </div>
                 <div class='timeline-item'>
@@ -792,8 +815,11 @@
                         <div class='timeline-date'>
                             <i class='fas fa-calendar-alt me-2'></i>12 de Noviembre, 2025
                         </div>
-                        <h4>Miércoles - Plaza</h4>
+                        <h4>Miércoles - Marketing Experencial y BPO</h4>
                         <p>Haz clic para ver el cronograma detallado del día.</p>
+                        <div class='schedule-badges'>
+                            <span class='schedule-badge badge-location'><i class='fas fa-map-marker-alt'></i> Fontibón</span>
+                        </div>
                     </div>
                 </div>
                 <div class='timeline-item'>
@@ -801,8 +827,11 @@
                         <div class='timeline-date'>
                             <i class='fas fa-calendar-alt me-2'></i>13 de Noviembre, 2025
                         </div>
-                        <h4>Jueves - Promoción</h4>
+                        <h4>Jueves - Marketing Holístico</h4>
                         <p>Haz clic para ver el cronograma detallado del día.</p>
+                        <div class='schedule-badges'>
+                            <span class='schedule-badge badge-night'><i class='fas fa-moon'></i> Noche</span>
+                        </div>
                     </div>
                 </div>
                 <div class='timeline-item'>
@@ -812,6 +841,9 @@
                         </div>
                         <h4>Viernes - Premiación y Clausura</h4>
                         <p>Haz clic para ver el cronograma detallado del día.</p>
+                        <div class='schedule-badges'>
+                            <span class='schedule-badge badge-morning'><i class='fas fa-sun'></i> Mañana</span>
+                        </div>
                     </div>
                 </div>
             </div>
