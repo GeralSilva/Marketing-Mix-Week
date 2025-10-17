@@ -623,6 +623,10 @@
                 font-size: 1.3rem;
             }
         }
+        /* Cards de actividades (inicio) */
+        .activity-box { background: #ffffff; border: 2px solid #f76300; border-radius: 10px; padding: 20px; margin: 15px; text-align: center; transition: all 0.3s ease; height: 150px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .activity-box:hover { background: #f76300; color: #ffffff; transform: scale(1.05); }
+
         /* Badges de jornada (cronograma) */
         .schedule-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
         .schedule-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 9999px; font-weight: 700; font-size: 0.95rem; border: 1px solid transparent; }
@@ -658,7 +662,7 @@
                         <a class='nav-link' href='#home'>Inicio</a>
                     </li>
                     <li class='nav-item'>
-                        <a class='nav-link' href='./actividades.html'>Actividades</a> <!--TIPOS DE ACTIVIDADES-->
+                        <a class='nav-link' href='#actividades'>Actividades</a> <!--TIPOS DE ACTIVIDADES-->
                     </li>
                     <li class='nav-item'>
                         <a class='nav-link' href='./congreso.html'>Congreso</a>
@@ -710,7 +714,7 @@
                     <h1 class='carousel-title'>Únete a la Experiencia</h1>
                     <p class='carousel-subtitle'>Charlas, Casos, Cápsulas, Olimpiadas, Destrezas y Proyectos</p>
                     <br></br>
-                    <a href='./actividades.html' class='btn btn-custom btn-lg'>Actividades</a>
+                    <a href='#actividades' class='btn btn-custom btn-lg'>Actividades</a>
                 </div>
             </div>
         </div>
@@ -749,37 +753,52 @@
         </div>
     </section>
 
-    <!-- Ejes Temáticos -->
-    <section class='container my-5'>
-        <h2 class='section-title'>Ejes Temáticos - Las 4P del Marketing</h2>
+    <!-- Actividades en inicio -->
+    <section id='actividades' class='container my-5'>
+        <h2 class='section-title'>Nuestras Actividades</h2>
         
-        <div class='row'>
-            <div class='col-md-6 col-lg-3'>
-                <div class='mix-variable'>
-                    <h4><i class='fas fa-box'></i> Producto</h4>
-                    <p>Estrategia de producto, propuesta de valor, niveles de producto, propuesta de servicio, prototipado y diseño, Branding, packaging...</p>
+        <div class='row mb-4'>
+            <div class='col-md-6 col-lg-4'>
+                <div class='activity-box'>
+                    <i class='fas fa-chess fa-2x' style='color: #f76300; margin-bottom: 15px;'></i>
+                    <h5>Marketing Mix Strategy</h5>
                 </div>
             </div>
-            <div class='col-md-6 col-lg-3'>
-                <div class='mix-variable'>
-                    <h4><i class='fas fa-dollar-sign'></i> Precio</h4>
-                    <p>Oferta y demanda, percepción de valor, costos, márgenes, punto de equilibrio, competencia, estrategia para fijación de precios, márgenes de negociación al intermediario...</p>
+            <div class='col-md-6 col-lg-4'>
+                <div class='activity-box'>
+                    <i class='fas fa-trophy fa-2x' style='color: #f76300; margin-bottom: 15px;'></i>
+                    <h5>Olimpiadas de Conocimiento</h5>
                 </div>
             </div>
-            <div class='col-md-6 col-lg-3'>
-                <div class='mix-variable'>
-                    <h4><i class='fas fa-map-marker-alt'></i> Plaza</h4>
-                    <p>Cobertura, cadena de valor, logística, estrategia, longitud y anchura, intermediarios, ecommerce, formato comercial, conflictos de canal, venta directa...</p>
-                </div>
-            </div>
-            <div class='col-md-6 col-lg-3'>
-                <div class='mix-variable'>
-                    <h4><i class='fas fa-bullhorn'></i> Promoción</h4>
-                    <p>Estrategias de comunicación, relaciones públicas, fuerza de ventas, merchandising, marketing digital, promoción de ventas, publicidad, Marketing directo...</p>
+            <div class='col-md-6 col-lg-4'>
+                <div class='activity-box'>
+                    <i class='fas fa-lightbulb fa-2x' style='color: #f76300; margin-bottom: 15px;'></i>
+                    <h5>Destrezas Mercadológicas</h5>
                 </div>
             </div>
         </div>
-    </section>  <!-- modificar el css importante dejar como el 2021 quitandolo de esa version-->
+        
+        <div class='row'>
+            <div class='col-md-6 col-lg-4'>
+                <div class='activity-box'>
+                    <i class='fas fa-star fa-2x' style='color: #f76300; margin-bottom: 15px;'></i>
+                    <h5>Casos de Éxito</h5>
+                </div>
+            </div>
+            <div class='col-md-6 col-lg-4'>
+                <div class='activity-box'>
+                    <i class='fas fa-comments fa-2x' style='color: #f76300; margin-bottom: 15px;'></i>
+                    <h5>Conferencias</h5>
+                </div>
+            </div>
+            <div class='col-md-6 col-lg-4'>
+                <div class='activity-box'>
+                    <i class='fas fa-play fa-2x' style='color: #f76300; margin-bottom: 15px;'></i>
+                    <h5>Marketiando con Sami</h5>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Cronograma Section -->
     <section id='cronograma' class='py-5'>
@@ -810,7 +829,7 @@
                         </div>
                     </div>
                 </div>
-                <div class='timeline-item'>
+                <div class='timeline-item clickable-timeline-item' onclick='openModal()'>
                     <div class='timeline-content'>
                         <div class='timeline-date'>
                             <i class='fas fa-calendar-alt me-2'></i>12 de Noviembre, 2025
@@ -818,7 +837,7 @@
                         <h4>Miércoles - Marketing Experencial y BPO</h4>
                         <p>Haz clic para ver el cronograma detallado del día.</p>
                         <div class='schedule-badges'>
-                            <span class='schedule-badge badge-location'><i class='fas fa-map-marker-alt'></i> Fontibón</span>
+                            <span class='schedule-badge badge-location'><i class='fas fa-headset'></i> Fontibon</span>
                         </div>
                     </div>
                 </div>
