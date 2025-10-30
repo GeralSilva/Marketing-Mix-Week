@@ -644,6 +644,40 @@
         @media (max-width: 480px) {
             .schedule-badge { font-size: 0.85rem; padding: 5px 10px; }
         }
+
+
+        /* desde aqui*/
+
+        /* Tarjetas de información más compactas */
+.info-card {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Variables del mix más compactas */
+.mix-variable {
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.mix-variable h4 {
+    font-size: 1.3rem;
+}
+
+/* Panel informativo de actividad */
+.activity-info {
+  display: none;
+  background: #ffffff;
+  border: 2px solid #f76300;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.activity-info h6 { margin-bottom: 8px; }
+.activity-info p { margin-bottom: 12px; }
+
     </style>
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -757,42 +791,72 @@
         
         <div class='row mb-4'>
             <div class='col-md-6 col-lg-4'>
-                <div class='activity-box'>
+                <div class='activity-box' onclick="toggleActivityInfo('info-mix')">
                     <i class='fas fa-chess fa-2x' style='color: #f76300; margin-bottom: 15px;'></i>
                     <h5>Marketing Mix Strategy</h5>
                 </div>
-            </div>
-            <div class='col-md-6 col-lg-4'>
-                <div class='activity-box'>
-                    <i class='fas fa-trophy fa-2x' style='color: #f76300; margin-bottom: 15px;'></i>
-                    <h5>Olimpiadas de Conocimiento</h5>
+                <div id='info-mix' class='activity-info'>
+                    <h6>¿Cómo se realiza?</h6>
+                    <p>Analizamos un caso real y tomamos decisiones del mix (producto, precio, plaza y promoción) con objetivos claros y métricas.</p>
+                    <button class='btn btn-custom btn-sm' data-url='https://view.genially.com/mmw-2025-mix' onclick='openActivityModal(this.dataset.url)'>Abrir actividad</button>
                 </div>
             </div>
             <div class='col-md-6 col-lg-4'>
-                <div class='activity-box'>
+                <div class='activity-box' onclick="toggleActivityInfo('info-olimpiadas')">
+                    <i class='fas fa-trophy fa-2x' style='color: #f76300; margin-bottom: 15px;'></i>
+                    <h5>Olimpiadas de Conocimiento</h5>
+                </div>
+                <div id='info-olimpiadas' class='activity-info'>
+                    <h6>¿Cómo se realiza?</h6>
+                    <p>Competencia por equipos con rondas de preguntas y retos prácticos de marketing y servicio.</p>
+                    <button class='btn btn-custom btn-sm' data-url='https://view.genially.com/mmw-2025-olimpiadas' onclick='openActivityModal(this.dataset.url)'>Abrir actividad</button>
+                </div>
+            </div>
+            <div class='col-md-6 col-lg-4'>
+                <div class='activity-box' onclick="toggleActivityInfo('info-destrezas')">
                     <i class='fas fa-lightbulb fa-2x' style='color: #f76300; margin-bottom: 15px;'></i>
                     <h5>Destrezas Mercadológicas</h5>
+                </div>
+                <div id='info-destrezas' class='activity-info'>
+                    <h6>¿Cómo se realiza?</h6>
+                    <p>Retos de visual, datos y servicio (BPO), aplicando creatividad, análisis y protocolos de atención.</p>
+                    <button class='btn btn-custom btn-sm' data-url='https://view.genially.com/690257505151ac3654d607fe/interactive-content-mmw-2025-destrezas' onclick='openActivityModal(this.dataset.url)'>Abrir actividad</button>
                 </div>
             </div>
         </div>
         
         <div class='row'>
             <div class='col-md-6 col-lg-4'>
-                <div class='activity-box'>
+                <div class='activity-box' onclick="toggleActivityInfo('info-casos')">
                     <i class='fas fa-star fa-2x' style='color: #f76300; margin-bottom: 15px;'></i>
                     <h5>Casos de Éxito</h5>
                 </div>
-            </div>
-            <div class='col-md-6 col-lg-4'>
-                <div class='activity-box'>
-                    <i class='fas fa-comments fa-2x' style='color: #f76300; margin-bottom: 15px;'></i>
-                    <h5>Conferencias</h5>
+                <div id='info-casos' class='activity-info'>
+                    <h6>¿Cómo se realiza?</h6>
+                    <p>Presentación de casos reales con resultados, aprendizajes y discusión guiada.</p>
+                    <button class='btn btn-custom btn-sm' data-url='https://view.genially.com/mmw-2025-casos' onclick='openActivityModal(this.dataset.url)'>Abrir actividad</button>
                 </div>
             </div>
             <div class='col-md-6 col-lg-4'>
-                <div class='activity-box'>
+                <div class='activity-box' onclick="toggleActivityInfo('info-conferencias')">
+                    <i class='fas fa-comments fa-2x' style='color: #f76300; margin-bottom: 15px;'></i>
+                    <h5>Conferencias</h5>
+                </div>
+                <div id='info-conferencias' class='activity-info'>
+                    <h6>¿Cómo se realiza?</h6>
+                    <p>Charlas con expertos, sesión de preguntas y networking posterior.</p>
+                    <button class='btn btn-custom btn-sm' data-url='https://view.genially.com/mmw-2025-conferencias' onclick='openActivityModal(this.dataset.url)'>Abrir actividad</button>
+                </div>
+            </div>
+            <div class='col-md-6 col-lg-4'>
+                <div class='activity-box' onclick="toggleActivityInfo('info-sami')">
                     <i class='fas fa-play fa-2x' style='color: #f76300; margin-bottom: 15px;'></i>
                     <h5>Marketiando con Sami</h5>
+                </div>
+                <div id='info-sami' class='activity-info'>
+                    <h6>¿Cómo se realiza?</h6>
+                    <p>Cápsulas prácticas en video con ejemplos aplicados y guía paso a paso.</p>
+                    <button class='btn btn-custom btn-sm' data-url='https://view.genially.com/mmw-2025-sami' onclick='openActivityModal(this.dataset.url)'>Abrir actividad</button>
                 </div>
             </div>
         </div>
@@ -866,6 +930,8 @@
             </div>
         </div>
     </section>
+
+
 
     <!-- Social Media Section -->
     <section id='redes' class='social-section'>
@@ -975,5 +1041,57 @@
             wrap: true
         });
     </script>
+
+    <!-- Modal de Actividades (Genially) -->
+<div id='activityModal' class='modal-overlay' onclick='closeActivityModal(event)'>
+  <div class='modal-content' onclick='event.stopPropagation()'>
+    <div class='modal-header'>
+      <h3>Actividad - Detalle Interactivo</h3>
+      <button class='modal-close' onclick='closeActivityModal()' aria-label='Cerrar modal'>
+        <i class='fas fa-times'></i>
+      </button>
+    </div>
+    <iframe id='activityIframe' class='modal-iframe' src='' title='Actividad Interactiva'></iframe>
+  </div>
+</div>
+
+<script>
+  function toggleActivityInfo(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+  }
+
+  function openActivityModal(url) {
+    const modal = document.getElementById('activityModal');
+    const iframe = document.getElementById('activityIframe');
+    iframe.src = url || 'https://view.genially.com/690257505151ac3654d607fe/interactive-content-mmw-2025-destrezas';
+    modal.style.display = 'flex';
+    setTimeout(() => { modal.style.opacity = '1'; }, 10);
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeActivityModal(event) {
+    if (event && event.target !== event.currentTarget && !event.target.classList.contains('modal-close') && !event.target.classList.contains('fa-times')) {
+      return;
+    }
+    const modal = document.getElementById('activityModal');
+    const iframe = document.getElementById('activityIframe');
+    modal.style.opacity = '0';
+    setTimeout(() => {
+      modal.style.display = 'none';
+      iframe.src = '';
+    }, 300);
+    document.body.style.overflow = 'auto';
+  }
+
+  // Cerrar modal con tecla Escape
+  document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+          closeActivityModal();
+      }
+  });
+</script>
+
 </body>
 </html>
