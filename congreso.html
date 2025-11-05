@@ -235,122 +235,6 @@
             font-weight: 500;
         }
 
-        /* Book Modal Styles */
-        .book-modal .modal-dialog {
-            max-width: 900px;
-            width: 90%;
-        }
-
-        .book-modal .modal-content {
-            background: #2c3e50;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-
-        .book-container {
-            position: relative;
-            height: 600px;
-            background: #34495e;
-            border-radius: 10px;
-            margin: 20px;
-            perspective: 1000px;
-        }
-
-        .book-page {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transform-origin: left center;
-            transition: transform 0.6s ease-in-out;
-            backface-visibility: hidden;
-            display: none;
-            overflow: hidden;
-        }
-
-        .book-page.active {
-            display: block;
-        }
-
-        .book-page.flipped {
-            transform: rotateY(-180deg);
-        }
-
-        .page-content {
-            padding: 0;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .page-image {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 0;
-            box-shadow: none;
-            margin: 0;
-        }
-
-        .page-title {
-            color: #2c3e50;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .page-description {
-            color: #7f8c8d;
-            text-align: center;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        .book-controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background: #34495e;
-        }
-
-        .book-btn {
-            background: #f76300;
-            border: none;
-            color: #ffffff;
-            padding: 10px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .book-btn:hover {
-            background: #e55a00;
-            transform: translateY(-2px);
-        }
-
-        .book-btn:disabled {
-            background: #95a5a6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .page-indicator {
-            color: #ffffff;
-            font-weight: 500;
-        }
-
-        .schedule-icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: #f76300;
-        }
-
         /* Carousel */
         .carousel-item {
             height: 550px; /* Altura fija para consistencia */
@@ -686,64 +570,22 @@
         </div>
     </section>
 
-    <!-- Cronograma - Schedule Section -->
+    <!-- Cronograma - Canva Embed Section -->
     <section id='cronograma' class='schedule-section'>
         <div class='container'>
             <div class='text-center mb-5'>
-                <i class='fas fa-calendar-alt schedule-icon'></i>
-                <h2 class='section-title'>📅 Cronograma del Congreso</h2>
-                <p class='lead'>Explora las actividades programadas para cada día del congreso</p>
+                <h2 class='section-title'>📅 Agenda del Congreso</h2>
+                <p class='lead'>Explora la agenda completa del congreso</p>
             </div>
             
             <div class='row'>
-                <div class='col-lg-8 mx-auto'>
-                    <!-- Lunes 10 de Noviembre -->
-                    <div class='schedule-day' onclick='openBookModal("lunes")'>
-                        <div class='day-header'>
-                            <h3 class='day-title'>Lunes 10 de Noviembre</h3>
-                            <span class='day-date'>📅 Día 1</span>
-                        </div>
-                        <div class='day-themes'>
-                            <span class='theme-tag'>Marketing y Evolución</span>
-                           
-                        </div>
-                        <p class='mt-3 mb-0 text-muted'>Haz clic para ver las actividades detalladas de este día</p>
-                    </div>
-
-                    <!-- Martes 11 de Noviembre -->
-                    <div class='schedule-day' onclick='openBookModal("martes")'>
-                        <div class='day-header'>
-                            <h3 class='day-title'>Martes 11 de Noviembre</h3>
-                            <span class='day-date'>📅 Día 2</span>
-                        </div>
-                        <div class='day-themes'>
-                             <span class='theme-tag'>Marketing y Tendencias</span>
-                        </div>
-                        <p class='mt-3 mb-0 text-muted'>Haz clic para ver las actividades detalladas de este día</p>
-                    </div>
-
-                    <!-- Miércoles 12 de Noviembre -->
-                    <div class='schedule-day' onclick='openBookModal("miercoles")'>
-                        <div class='day-header'>
-                            <h3 class='day-title'>Miércoles 12 de Noviembre</h3>
-                            <span class='day-date'>📅 Día 3</span>
-                        </div>
-                        <div class='day-themes'>
-                            <span class='theme-tag'>Marketing Experiencial y BPO</span>
-                        </div>
-                        <p class='mt-3 mb-0 text-muted'>Haz clic para ver las actividades detalladas de este día</p>
-                    </div>
-
-                    <!-- Jueves 13 de Noviembre -->
-                    <div class='schedule-day' onclick='openBookModal("jueves")'>
-                        <div class='day-header'>
-                            <h3 class='day-title'>Jueves 13 de Noviembre</h3>
-                            <span class='day-date'>📅 Día 4</span>
-                        </div>
-                        <div class='day-themes'>
-                            <span class='theme-tag'>Marketing Holístico</span>
-                        </div>
-                        <p class='mt-3 mb-0 text-muted'>Haz clic para ver las actividades detalladas de este día</p>
+                <div class='col-lg-12 mx-auto'>
+                    <div class='canva-embed-container' style='position: relative; width: 100%; height: 0; padding-bottom: 56.25%; overflow: hidden; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);'>
+                        <iframe src='https://www.canva.com/design/DAG3SJR2YCM/oka8VNXmfIBKTSuN2UfzOg/view?embed' 
+                                allowfullscreen='allowfullscreen' 
+                                allow='fullscreen' 
+                                style='position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;'>
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -951,184 +793,7 @@
         }
     </script>
 
-    <!-- Book Modal JavaScript -->
-    <script>
-        // Schedule data for each day
-        const scheduleData = {
-            lunes: {
-                title: "Lunes 10 de Noviembre - Marketing y Evolución",
-                pages: [
-                    {
-                        image: "imag-congreso/1.jpg",
-                    },
-                    {
-                        image: "imag-congreso/2.jpg",
-                    },
-                    {
-                        image: "imag-congreso/3.jpg",
-                    }
-                ]
-            },
-            martes: {
-                title: "Martes 11 de Noviembre - Marketing Experiencial y BPO",
-                pages: [
-                    {
-                        image: "imag-congreso/4.jpg",
-                    },
-                    {
-                        image: "imag-congreso/5.jpg",
-                    },
-                    {
-                        image: "imag-congreso/6.jpg",
-                    },
 
-                    {
-                        image: "imag-congreso/7.jpg",
-                    }
-                ]
-            },
-            miercoles: {
-                title: "Miércoles 12 de Noviembre - Marketing Holístico",
-                pages: [
-                    {
-                        image: "imag-congreso/8.jpg",
-                        title: "Estrategias de Marketing Integral",
-                        description: "1:00 PM - Taller práctico sobre integración de canales y mensajes"
-                    },
-                    {
-                        image: "imag-congreso/9.jpg",
-                        title: "Casos de Éxito en Marketing Holístico",
-                        description: "4:00 PM - Presentación de casos reales de implementación"
-                    },
-                    {
-                        image: "imag-congreso/10.jpg",
-                        title: "Estrategias de Marketing Integral",
-                        description: "1:00 PM - Taller práctico sobre integración de canales y mensajes"
-                    },
-
-                    {
-                        image: "imag-congreso/11.jpg",
-                        title: "Estrategias de Marketing Integral",
-                        description: "1:00 PM - Taller práctico sobre integración de canales y mensajes"
-                    },
-
-                    {
-                        image: "imag-congreso/12.jpg",
-                        title: "Estrategias de Marketing Integral",
-                        description: "1:00 PM - Taller práctico sobre integración de canales y mensajes"
-                    }
-                ]
-            },
-            jueves: {
-                title: "Jueves 13 de Noviembre - Marketing Digital e Innovación",
-                pages: [
-                    {
-                        image: "imag-congreso/13.jpg",
-                        title: "Marketing Digital y Tecnología",
-                        description: "10:00 AM - Exploración de herramientas digitales y automatización"
-                    },
-                    {
-                        image: "imag-congreso/14.jpg",
-                        title: "Innovación en Marketing 6.0",
-                        description: "2:00 PM - IA, sostenibilidad y nuevas tendencias en marketing"
-                    }
-                ]
-            },
-        };
-
-        let currentPage = 0;
-        let totalPages = 0;
-        let currentDay = '';
-
-        function openBookModal(day) {
-            currentDay = day;
-            const dayData = scheduleData[day];
-            
-            if (!dayData) return;
-
-            currentPage = 0;
-            totalPages = dayData.pages.length;
-
-            // Update modal title
-            document.getElementById('bookModalLabel').textContent = dayData.title;
-
-            // Generate book pages
-            const bookPages = document.getElementById('bookPages');
-            bookPages.innerHTML = '';
-
-            dayData.pages.forEach((page, index) => {
-                const pageElement = document.createElement('div');
-                pageElement.className = 'book-page';
-                if (index === 0) pageElement.classList.add('active');
-                
-                pageElement.innerHTML = `
-                    <div class="page-content">
-                        <img src="${page.image}" alt="${page.title}" class="page-image">
-                    </div>
-                `;
-                
-                bookPages.appendChild(pageElement);
-            });
-
-            updatePageIndicator();
-            
-            // Show modal
-            const modal = new bootstrap.Modal(document.getElementById('bookModal'));
-            modal.show();
-        }
-
-        function changePage(direction) {
-            const pages = document.querySelectorAll('.book-page');
-            if (pages.length === 0) return;
-
-            // Hide current page with flip animation
-            pages[currentPage].classList.add('flipped');
-            
-            setTimeout(() => {
-                pages[currentPage].classList.remove('active');
-                
-                // Update current page
-                currentPage += direction;
-                
-                if (currentPage < 0) currentPage = 0;
-                if (currentPage >= totalPages) currentPage = totalPages - 1;
-                
-                // Show new page
-                pages[currentPage].classList.remove('flipped');
-                pages[currentPage].classList.add('active');
-                
-                updatePageIndicator();
-                updateButtons();
-            }, 300);
-        }
-
-        function updatePageIndicator() {
-            document.getElementById('pageIndicator').textContent = `Página ${currentPage + 1} de ${totalPages}`;
-        }
-
-        function updateButtons() {
-            const prevBtn = document.getElementById('prevPage');
-            const nextBtn = document.getElementById('nextPage');
-            
-            prevBtn.disabled = currentPage === 0;
-            nextBtn.disabled = currentPage === totalPages - 1;
-        }
-
-        // Reset modal when closed
-        document.getElementById('bookModal').addEventListener('hidden.bs.modal', function () {
-            currentPage = 0;
-            currentDay = '';
-            document.getElementById('bookPages').innerHTML = '';
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            if (document.getElementById('bookModal').classList.contains('show')) {
-                if (e.key === 'ArrowLeft') changePage(-1);
-                if (e.key === 'ArrowRight') changePage(1);
-            }
-        });
-    </script>
 
     <!-- Modal de Justificación del Congreso -->
     <div class="modal fade" id="justificacionModal" tabindex="-1" aria-labelledby="justificacionModalLabel" aria-hidden="true">
@@ -1154,28 +819,7 @@
         </div>
     </div>
 
-    <!-- Book Modal for Schedule -->
-    <div class="modal fade book-modal" id="bookModal" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="bookModalLabel">📅 Actividades del Día</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-0">
-                    <div class="book-container">
-                        <!-- Pages will be dynamically generated -->
-                        <div id="bookPages"></div>
-                    </div>
-                    <div class="book-controls">
-                        <button id="prevPage" class="book-btn" onclick="changePage(-1)">⬅ Anterior</button>
-                        <span id="pageIndicator" class="page-indicator">Página 1 de 1</span>
-                        <button id="nextPage" class="book-btn" onclick="changePage(1)">Siguiente ➡</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
 </body>
 </html>
