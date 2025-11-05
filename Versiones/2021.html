@@ -146,6 +146,48 @@
         .clickable-day:hover h4 {
             color: #f76300;
         }
+
+        /* Shared section styles for consistency with other versions */
+        .section-title {
+            font-family: Impact, Arial Black, sans-serif;
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .visual-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.25rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .icon-large {
+            font-size: 2rem;
+            color: #f76300;
+            margin-bottom: 0.5rem;
+        }
+        .btn-custom {
+            background: linear-gradient(135deg, #f76300 0%, #ff8533 100%);
+            color: #fff;
+            border: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(247, 99, 0, 0.3);
+            color: #fff;
+        }
+        .table-custom {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .table-header-custom {
+            background: #fef1e9;
+        }
         </style>
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -183,162 +225,200 @@
     
     
 
-    <!-- Agenda del Evento -->
+    <!-- Información General -->
     <section class='container my-5'>
-        <h2 class='section-title'>Agenda del Evento</h2>
-        <div class='agenda-container'>
-            <div class='agenda-day'>
-<h4><i class='fas fa-calendar-day'></i> Lunes - PRODUCTO</h4>
-                <div class='agenda-items'>
-                    <div class='agenda-item'>
-                        <span class='time'>9:00</span>
-                        <span class='activity'>Apertura - bienvenida - cronograma - salud ocupacional</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>10:00</span>
-                        <span class='activity'>Presentación de proyecto 1 al 5 (10 min de presentación, 5 de preguntas)</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>12:00</span>
-                        <span class='activity'>Conferencia/Taller PRODUCTO</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>13:00</span>
-                        <span class='activity'>Almuerzo (12:30 a 14:00)</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>14:00</span>
-                        <span class='activity'>Caso de Éxito</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>16:00</span>
-                        <span class='activity'>Presentación de proyecto 6 al 10 (10 min de presentación, 5 de preguntas)</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>17:00</span>
-                        <span class='activity'>Olimpiadas de Conocimiento PRODUCTO</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>18:00</span>
-                        <span class='activity'>Termina 5:30 pm</span>
-                    </div>
+        <h2 class='section-title'><i class='fas fa-info-circle'></i> Información General</h2>
+        <div class='row'>
+            <div class='col-md-6 mb-4'>
+                <div class='visual-card text-center'>
+                    <i class='fas fa-map-marker-alt icon-large'></i>
+                    <h4>Ubicación</h4>
+                    <p>Centro de Gestión de Mercados, Logística y Tecnologías de la Información – SENA CGMLTI</p>
                 </div>
             </div>
-            
-            <div class='agenda-day'>
-                <h4><i class='fas fa-calendar-day'></i> Martes - PRECIO</h4>
-                <div class='agenda-items'>
-                    <div class='agenda-item'>
-                        <span class='time'>10:00</span>
-                        <span class='activity'>Presentación de proyecto 6 al 10 (10 min de presentación, 5 de preguntas)</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>12:00</span>
-                        <span class='activity'>Almuerzo (12:00 a 13:30)</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>14:00</span>
-                        <span class='activity'>Presentación de proyecto 1 al 5 (10 min de presentación, 5 de preguntas)</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>16:00</span>
-                        <span class='activity'>Conferencia/Taller PRECIO</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>17:00</span>
-                        <span class='activity'>Olimpiadas de Conocimiento PRECIO</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>18:00</span>
-                        <span class='activity'>Termina 5:30 pm</span>
-                    </div>
+            <div class='col-md-6 mb-4'>
+                <div class='visual-card text-center'>
+                    <i class='fas fa-calendar icon-large'></i>
+                    <h4>Fechas</h4>
+                    <p>Del 06 al 10 de septiembre de 2021</p>
                 </div>
             </div>
-            
-            <div class='agenda-day'>
-                <h4><i class='fas fa-calendar-day'></i> Miércoles - PLAZA</h4>
-                <div class='agenda-items'>
-                    <div class='agenda-item'>
-                        <span class='time'>12:00</span>
-                        <span class='activity'>Conferencia/Taller PLAZA</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>13:00</span>
-                        <span class='activity'>Almuerzo (13:00 a 14:30)</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>14:00</span>
-                        <span class='activity'>Caso de Éxito</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>17:00</span>
-                        <span class='activity'>Olimpiadas de Conocimiento PLAZA</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>18:00</span>
-                        <span class='activity'>Termina 5:30 pm</span>
-                    </div>
+            <div class='col-md-6 mb-4'>
+                <div class='visual-card text-center'>
+                    <i class='fab fa-youtube icon-large'></i>
+                    <h4>Transmisión</h4>
+                    <p>Transmisión en vivo: Canal de YouTube @mmwsena</p>
+                    <a href='https://www.youtube.com/@mmwsena' target='_blank' class='btn btn-custom btn-sm mt-2'>@mmwsena</a>
                 </div>
             </div>
-            
-            <div class='agenda-day'>
-                <h4><i class='fas fa-calendar-day'></i> Jueves - PROMOCIÓN</h4>
-                <div class='agenda-items'>
-                    <div class='agenda-item'>
-                        <span class='time'>10:00</span>
-                        <span class='activity'>Presentación de proyecto 6 al 10 (10 min de presentación, 5 de preguntas)</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>12:00</span>
-                        <span class='activity'>Almuerzo (12:00 a 13:30)</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>14:00</span>
-                        <span class='activity'>Presentación de proyecto 1 al 5 (10 min de presentación, 5 de preguntas)</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>16:00</span>
-                        <span class='activity'>Conferencia/Taller PROMOCIÓN</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>17:00</span>
-                        <span class='activity'>Olimpiadas de Conocimiento PROMOCIÓN</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>18:00</span>
-                        <span class='activity'>Termina 5:30 pm</span>
-                    </div>
+            <div class='col-md-6 mb-4'>
+                <div class='visual-card text-center'>
+                    <i class='fas fa-laptop icon-large'></i>
+                    <h4>Modalidad</h4>
+                    <p>Presencial y Virtual (según ícono indicado)</p>
                 </div>
             </div>
-            
-            <div class='agenda-day'>
-                <h4><i class='fas fa-calendar-day'></i> Viernes</h4>
-                <div class='agenda-items'>
-                    <div class='agenda-item'>
-                        <span class='time'>11:00</span>
-                        <span class='activity'>Los 3 mejores proyectos pasarán a la sesión final del Marketing Mix Strategy (5 minutos por grupo y 10 de preguntas de los jurados)</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>12:00</span>
-                        <span class='activity'>Premiación Marketing Mix Strategy</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>13:00</span>
-                        <span class='activity'>Ronda final Olimpiadas de Conocimiento</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>14:00</span>
-                        <span class='activity'>Premiación Olimpiadas de Conocimiento</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>15:00</span>
-                        <span class='activity'>Cierre del Marketing Mix Week</span>
-                    </div>
-                    <div class='agenda-item'>
-                        <span class='time'>16:00</span>
-                        <span class='activity'>Termina 1:00 pm</span>
-                    </div>
+        </div>
+    </section>
+
+    <!-- Convenciones -->
+    <section class='container my-5'>
+        <h2 class='section-title'><i class='fas fa-tags'></i> Convenciones</h2>
+        <div class='row'>
+            <div class='col-md-4 mb-4'>
+                <div class='visual-card text-center'>
+                    <i class='fas fa-circle' style='color: #ff0000;'></i>
+                    <h4>🔴 Presencial</h4>
+                    <p>Actividad en el Centro de Gestión de Mercados, Logística y TI</p>
                 </div>
+            </div>
+            <div class='col-md-4 mb-4'>
+                <div class='visual-card text-center'>
+                    <i class='fas fa-circle' style='color: #000000;'></i>
+                    <h4>⚫ Virtual</h4>
+                    <p>Transmisión en el canal de YouTube @mmwsena</p>
+                </div>
+            </div>
+            <div class='col-md-4 mb-4'>
+                <div class='visual-card text-center'>
+                    <i class='fas fa-circle' style='color: #ff8c00;'></i>
+                    <h4>🟠 Feria de experiencias MMS</h4>
+                    <p>Actividad presencial complementaria</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cronograma Completo -->
+    <section class='container my-5'>
+        <h2 class='section-title'><i class='fas fa-calendar-alt'></i> Cronograma Completo</h2>
+
+        <!-- Lunes - PRODUCTO -->
+        <div class='mb-5'>
+            <h3 class='text-center mb-4'><i class='fas fa-calendar-day'></i> Lunes - PRODUCTO</h3>
+            <div class='table-responsive'>
+                <table class='table table-hover table-custom'>
+                    <thead class='table-header-custom'>
+                        <tr>
+                            <th width='20%'>Hora</th>
+                            <th width='50%'>Actividad</th>
+                            <th width='30%'>Ponente / Responsable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>9:00</td><td>Apertura - bienvenida - cronograma - salud ocupacional</td><td>—</td></tr>
+                        <tr><td>10:00</td><td>Presentación de proyecto 1 al 5 (10 min de presentación, 5 de preguntas)</td><td>—</td></tr>
+                        <tr><td>12:00</td><td>Conferencia/Taller PRODUCTO</td><td>—</td></tr>
+                        <tr><td>13:00</td><td>Almuerzo (12:30 a 14:00)</td><td>—</td></tr>
+                        <tr><td>14:00</td><td>Caso de Éxito</td><td>—</td></tr>
+                        <tr><td>16:00</td><td>Presentación de proyecto 6 al 10 (10 min de presentación, 5 de preguntas)</td><td>—</td></tr>
+                        <tr><td>17:00</td><td>Olimpiadas de Conocimiento PRODUCTO</td><td>—</td></tr>
+                        <tr><td>18:00</td><td>Termina 5:30 pm</td><td>—</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class='text-center mt-3'>
+                <a href='https://www.youtube.com/watch?v=lGAGss7wIG8' target='_blank' class='btn btn-custom me-2'>
+                    <i class='fab fa-youtube'></i> Ver Sesión Mañana (10 de septiembre)
+                </a>
+                <a href='https://www.youtube.com/watch?v=VGg9jIn5-eM' target='_blank' class='btn btn-custom'>
+                    <i class='fab fa-youtube'></i> Ver Sesión Tarde (10 de septiembre)
+                </a>
+            </div>
+        </div>
+
+        <!-- Martes - PRECIO -->
+        <div class='mb-5'>
+            <h3 class='text-center mb-4'><i class='fas fa-calendar-day'></i> Martes - PRECIO</h3>
+            <div class='table-responsive'>
+                <table class='table table-hover table-custom'>
+                    <thead class='table-header-custom'>
+                        <tr>
+                            <th width='20%'>Hora</th>
+                            <th width='50%'>Actividad</th>
+                            <th width='30%'>Ponente / Responsable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>10:00</td><td>Presentación de proyecto 6 al 10 (10 min de presentación, 5 de preguntas)</td><td>—</td></tr>
+                        <tr><td>12:00</td><td>Almuerzo (12:00 a 13:30)</td><td>—</td></tr>
+                        <tr><td>14:00</td><td>Presentación de proyecto 1 al 5 (10 min de presentación, 5 de preguntas)</td><td>—</td></tr>
+                        <tr><td>16:00</td><td>Conferencia/Taller PRECIO</td><td>—</td></tr>
+                        <tr><td>17:00</td><td>Olimpiadas de Conocimiento PRECIO</td><td>—</td></tr>
+                        <tr><td>18:00</td><td>Termina 5:30 pm</td><td>—</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Miércoles - PLAZA -->
+        <div class='mb-5'>
+            <h3 class='text-center mb-4'><i class='fas fa-calendar-day'></i> Miércoles - PLAZA</h3>
+            <div class='table-responsive'>
+                <table class='table table-hover table-custom'>
+                    <thead class='table-header-custom'>
+                        <tr>
+                            <th width='20%'>Hora</th>
+                            <th width='50%'>Actividad</th>
+                            <th width='30%'>Ponente / Responsable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>12:00</td><td>Conferencia/Taller PLAZA</td><td>—</td></tr>
+                        <tr><td>13:00</td><td>Almuerzo (13:00 a 14:30)</td><td>—</td></tr>
+                        <tr><td>14:00</td><td>Caso de Éxito</td><td>—</td></tr>
+                        <tr><td>17:00</td><td>Olimpiadas de Conocimiento PLAZA</td><td>—</td></tr>
+                        <tr><td>18:00</td><td>Termina 5:30 pm</td><td>—</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Jueves - PROMOCIÓN -->
+        <div class='mb-5'>
+            <h3 class='text-center mb-4'><i class='fas fa-calendar-day'></i> Jueves - PROMOCIÓN</h3>
+            <div class='table-responsive'>
+                <table class='table table-hover table-custom'>
+                    <thead class='table-header-custom'>
+                        <tr>
+                            <th width='20%'>Hora</th>
+                            <th width='50%'>Actividad</th>
+                            <th width='30%'>Ponente / Responsable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>10:00</td><td>Presentación de proyecto 6 al 10 (10 min de presentación, 5 de preguntas)</td><td>—</td></tr>
+                        <tr><td>12:00</td><td>Almuerzo (12:00 a 13:30)</td><td>—</td></tr>
+                        <tr><td>14:00</td><td>Presentación de proyecto 1 al 5 (10 min de presentación, 5 de preguntas)</td><td>—</td></tr>
+                        <tr><td>16:00</td><td>Conferencia/Taller PROMOCIÓN</td><td>—</td></tr>
+                        <tr><td>17:00</td><td>Olimpiadas de Conocimiento PROMOCIÓN</td><td>—</td></tr>
+                        <tr><td>18:00</td><td>Termina 5:30 pm</td><td>—</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Viernes -->
+        <div class='mb-5'>
+            <h3 class='text-center mb-4'><i class='fas fa-calendar-day'></i> Viernes</h3>
+            <div class='table-responsive'>
+                <table class='table table-hover table-custom'>
+                    <thead class='table-header-custom'>
+                        <tr>
+                            <th width='20%'>Hora</th>
+                            <th width='50%'>Actividad</th>
+                            <th width='30%'>Ponente / Responsable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>11:00</td><td>Los 3 mejores proyectos pasan a la sesión final del Marketing Mix Strategy (5 minutos por grupo y 10 de preguntas de los jurados)</td><td>—</td></tr>
+                        <tr><td>12:00</td><td>Premiación Marketing Mix Strategy</td><td>—</td></tr>
+                        <tr><td>13:00</td><td>Ronda final Olimpiadas de Conocimiento</td><td>—</td></tr>
+                        <tr><td>14:00</td><td>Premiación Olimpiadas de Conocimiento</td><td>—</td></tr>
+                        <tr><td>15:00</td><td>Cierre del Marketing Mix Week</td><td>—</td></tr>
+                        <tr><td>16:00</td><td>Termina 1:00 pm</td><td>—</td></tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
