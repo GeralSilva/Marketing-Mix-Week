@@ -470,11 +470,14 @@
             background: white;
             border-radius: 10px;
             width: 90%;
-            height: 90%;
+            height: auto; /* Deja que el contenido determine la altura */
             max-width: 1200px; /* Ancho máximo */
-            max-height: 800px; /* Alto máximo */
+            max-height: 95vh; /* Limita a la altura visible de la ventana */
             position: relative;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra pronunciada */
+            display: grid; /* Usa grid para ajustar imagen sin suposiciones de altura */
+            grid-template-rows: auto 1fr; /* Cabecera + contenido que ocupa el resto */
+            overflow: auto; /* Si la imagen es más alta, permite scroll interno */
         }
 
         /* Cabecera del modal */
@@ -516,6 +519,20 @@
             height: calc(100% - 60px); /* Altura completa menos la cabecera */
             border: none; /* Sin bordes */
             border-radius: 0 0 10px 10px; /* Bordes redondeados inferiores */
+        }
+
+        /* Imagen dentro del modal de cronograma */
+        .modal-image {
+            width: auto; /* Mantiene proporción natural sin estirarse */
+            height: auto; /* Evita recortes por altura fija */
+            max-width: 100%; /* Nunca supera el ancho del modal */
+            max-height: calc(95vh - 60px); /* Cabe debajo de la cabecera sin recortarse */
+            object-fit: contain; /* No recorta ni deforma, siempre visible completa */
+            object-position: center; /* Centrada en el contenedor */
+            background-color: #000; /* Fondo para evitar bandas blancas visibles */
+            border-radius: 0 0 10px 10px; /* Bordes redondeados inferiores */
+            display: block;
+            margin: 0 auto; /* Centrada horizontalmente si queda más pequeña */
         }
 
         /* Efecto hover en elementos clickeables del timeline */
@@ -866,7 +883,7 @@
         <div class='container'>
             <h2 class='section-title'>Cronograma MMW 2025</h2>
             <div class='timeline'>
-                <div class='timeline-item clickable-timeline-item' onclick='openModal()'>
+                <div class='timeline-item clickable-timeline-item' onclick='openModal("lunes")'>
                     <div class='timeline-content'>
                         <div class='timeline-date'>
                             <i class='fas fa-calendar-alt me-2'></i>10 de Noviembre, 2025
@@ -878,7 +895,7 @@
                         </div>
                     </div>
                 </div>
-                <div class='timeline-item'>
+                <div class='timeline-item clickable-timeline-item' onclick='openModal("martes")'>
                     <div class='timeline-content'>
                         <div class='timeline-date'>
                             <i class='fas fa-calendar-alt me-2'></i>11 de Noviembre, 2025
@@ -890,19 +907,19 @@
                         </div>
                     </div>
                 </div>
-                <div class='timeline-item clickable-timeline-item' onclick='openModal()'>
+                <div class='timeline-item clickable-timeline-item' onclick='openModal("miercoles")'>
                     <div class='timeline-content'>
                         <div class='timeline-date'>
                             <i class='fas fa-calendar-alt me-2'></i>12 de Noviembre, 2025
                         </div>
-                        <h4>Miércoles - Marketing Experencial y BPO</h4>
+                        <h4>Miércoles - Marketing Experiencial y BPO</h4>
                         <p>Haz clic para ver el cronograma detallado del día.</p>
                         <div class='schedule-badges'>
                             <span class='schedule-badge badge-location'><i class='fas fa-headset'></i> Fontibon</span>
                         </div>
                     </div>
                 </div>
-                <div class='timeline-item'>
+                <div class='timeline-item clickable-timeline-item' onclick='openModal("jueves")'>
                     <div class='timeline-content'>
                         <div class='timeline-date'>
                             <i class='fas fa-calendar-alt me-2'></i>13 de Noviembre, 2025
@@ -914,7 +931,7 @@
                         </div>
                     </div>
                 </div>
-                <div class='timeline-item'>
+                <div class='timeline-item clickable-timeline-item' onclick='openModal("viernes")'>
                     <div class='timeline-content'>
                         <div class='timeline-date'>
                             <i class='fas fa-calendar-alt me-2'></i>14 de Noviembre, 2025
@@ -966,30 +983,50 @@
     <div id='scheduleModal' class='modal-overlay' onclick='closeModal(event)'>
         <div class='modal-content' onclick='event.stopPropagation()'>
             <div class='modal-header'>
-                <h3>Cronograma Detallado - Lunes</h3>
+                <h3 id='modalTitle'>Cronograma Detallado</h3>
                 <button class='modal-close' onclick='closeModal()' aria-label='Cerrar modal'>
                     <i class='fas fa-times'></i>
                 </button>
             </div>
-            <iframe id='modalIframe' class='modal-iframe' src='' title='Cronograma Detallado'></iframe>
+            <img id='modalImage' class='modal-image' src='' alt='Cronograma Detallado'>
         </div>
     </div>
 
     <script>
-        function openModal() {
+        function openModal(day) {
             const modal = document.getElementById('scheduleModal');
-            const iframe = document.getElementById('modalIframe');
+            const img = document.getElementById('modalImage');
+            const titleEl = document.getElementById('modalTitle');
+
+            const imageMap = {
+                lunes: 'Lunes-10.jpg',
+                martes: 'Martes-11.jpg',
+                miercoles: 'Miercoles-12.jpg',
+                jueves: 'Jueves-13.jpg',
+                viernes: 'Viernes-14.jpg'
+            };
+            const labelMap = {
+                lunes: 'Lunes',
+                martes: 'Martes',
+                miercoles: 'Miércoles',
+                jueves: 'Jueves',
+                viernes: 'Viernes'
+            };
+
+            const key = (day || '').toLowerCase();
+            const src = imageMap[key] || 'Lunes-10.jpg';
+            const dayLabel = labelMap[key] || '';
+
+            if (img) img.src = src;
+            if (titleEl) titleEl.textContent = dayLabel ? `Cronograma Detallado - ${dayLabel}` : 'Cronograma Detallado';
             
-            // Set the Genially URL
-            iframe.src = 'https://view.genially.com/68a8810fc05f69b775b8f6a0/interactive-content-4ta-oferta-de-formacion-presencial-2025-cgmlti';
-            
-            // Show modal with animation
+            // Mostrar modal con animación
             modal.style.display = 'flex';
             setTimeout(() => {
                 modal.style.opacity = '1';
             }, 10);
             
-            // Prevent body scroll
+            // Evitar scroll del body
             document.body.style.overflow = 'hidden';
         }
 
@@ -999,16 +1036,16 @@
             }
             
             const modal = document.getElementById('scheduleModal');
-            const iframe = document.getElementById('modalIframe');
+            const img = document.getElementById('modalImage');
             
-            // Hide modal with animation
+            // Ocultar modal con animación
             modal.style.opacity = '0';
             setTimeout(() => {
                 modal.style.display = 'none';
-                iframe.src = ''; // Clear iframe to stop loading
+                if (img) img.src = '';
             }, 300);
             
-            // Restore body scroll
+            // Restaurar scroll del body
             document.body.style.overflow = 'auto';
         }
 
