@@ -535,12 +535,105 @@
             margin: 0 auto; /* Centrada horizontalmente si queda más pequeña */
         }
 
+        /* Galería del día dentro del modal */
+        .day-gallery {
+            padding: 16px 20px;
+            border-top: 1px solid #eee;
+            background: #fafafa;
+            border-radius: 0 0 10px 10px;
+        }
+        .gallery-title {
+            color: #f76300;
+            font-size: 1.1rem;
+            margin: 0 0 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 12px;
+        }
+        .gallery-item {
+            border: 1px solid #f0f0f0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(247,99,0,0.18);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            display: block;
+        }
+
         /* Efecto hover en elementos clickeables del timeline */
         .clickable-timeline-item:hover h4 {
             color: #f76300; /* Color corporativo al hover */
         }
 
-        /* ===== RESPONSIVE DESIGN - DISPOSITIVOS MÓVILES ===== */
+        /* Estilos sección galería visible */
+        .schedule-gallery-section {
+             background: #ffffff; /* Fondo limpio sin imágenes */
+         }
+        .gallery-day-filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        .day-filter {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: 1px solid #f76300;
+            color: #f76300;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .day-filter:hover {
+            background: #fff3e9;
+        }
+        .day-filter.active {
+             background: #f76300;
+             color: #fff;
+         }
+ 
+         /* Carrusel para galería visible */
+         .gallery-carousel {
+             max-width: 1000px;
+             margin: 0 auto;
+         }
+         .gallery-carousel .carousel-item {
+             /* No sobrescribir display para no romper Bootstrap */
+             text-align: center;
+             background: transparent; /* sin fondo detrás de la imagen */
+         }
+         .gallery-carousel .carousel-item img {
+             width: 100%;
+             max-width: 900px;
+             height: 320px;
+             object-fit: cover;
+             border-radius: 12px;
+             box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+             display: block;
+             margin: 0 auto;
+         }
+ 
+         /* ===== RESPONSIVE DESIGN - DISPOSITIVOS MÓVILES ===== */
         @media (max-width: 768px) {
             /* Ajustes del carrusel para tablets */
             .carousel-item {
@@ -878,6 +971,8 @@
         </div>
     </section>
 
+    
+
     <!-- Cronograma Section -->
     <section id='cronograma' class='py-5'>
         <div class='container'>
@@ -947,7 +1042,31 @@
         </div>
     </section>
 
-
+<!-- Galería del Cronograma (visible) -->
+    <section id='galeria-cronograma' class='py-5 schedule-gallery-section'>
+        <div class='container'>
+            <h2 class='section-title'>Galería por Día</h2>
+            <p class='text-center fs-5 mb-4'>Explora fotos de cada jornada del MMW 2025</p>
+            <div class='gallery-day-filters'>
+                <button class='day-filter active' data-day='lunes'><i class='fas fa-calendar-day'></i> Lunes</button>
+                <button class='day-filter' data-day='martes'><i class='fas fa-calendar-day'></i> Martes</button>
+                <button class='day-filter' data-day='miercoles'><i class='fas fa-calendar-day'></i> Miércoles</button>
+                <button class='day-filter' data-day='jueves'><i class='fas fa-calendar-day'></i> Jueves</button>
+                <button class='day-filter' data-day='viernes'><i class='fas fa-calendar-day'></i> Viernes</button>
+            </div>
+            <div id='persistentGalleryCarousel' class='carousel slide gallery-carousel' data-bs-ride='false'>
+                 <div id='persistentCarouselInner' class='carousel-inner'></div>
+                 <button class='carousel-control-prev' type='button' data-bs-target='#persistentGalleryCarousel' data-bs-slide='prev'>
+                     <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+                     <span class='visually-hidden'>Anterior</span>
+                 </button>
+                 <button class='carousel-control-next' type='button' data-bs-target='#persistentGalleryCarousel' data-bs-slide='next'>
+                     <span class='carousel-control-next-icon' aria-hidden='true'></span>
+                     <span class='visually-hidden'>Siguiente</span>
+                 </button>
+             </div>
+        </div>
+    </section>
 
     <!-- Social Media Section -->
     <section id='redes' class='social-section'>
@@ -989,14 +1108,57 @@
                 </button>
             </div>
             <img id='modalImage' class='modal-image' src='' alt='Cronograma Detallado'>
+            <div id='dayGallery' class='day-gallery' style='display:none;'>
+                <h4 class='gallery-title'><i class='fas fa-images'></i> Galería del día</h4>
+                <div id='galleryGrid' class='gallery-grid'></div>
+            </div>
         </div>
     </div>
 
     <script>
+        // Galería persistente (visible)
+        window.galleryMapGlobal = {
+            lunes: ['proximamente.png','proximamente.png','proximamente.png'],
+            martes: ['proximamente.png','proximamente.png','proximamente.png'],
+            miercoles: ['proximamente.png','proximamente.png','proximamente.png'],
+            jueves: ['proximamente.png','proximamente.png'],
+            viernes: ['proximamente.png','proximamente.png','proximamente.png']
+        };
+
+        function renderPersistentGallery(dayKey){
+            const inner = document.getElementById('persistentCarouselInner');
+            const buttons = document.querySelectorAll('.day-filter');
+            const images = (window.galleryMapGlobal[dayKey] || []);
+            if (inner) {
+                if (!images.length) {
+                    inner.innerHTML = `<div class='carousel-item active'><div class='p-4 text-center text-muted'>No hay imágenes para este día.</div></div>`;
+                } else {
+                    inner.innerHTML = images.map((src, idx) => (
+                        `<div class='carousel-item ${idx===0 ? 'active' : ''}'><img src='${src}' alt='Foto ${dayKey} ${idx+1}'></div>`
+                    )).join('');
+                }
+            }
+            // marcar activo el botón
+            buttons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.day === dayKey);
+            });
+        }
+
+        // Inicializar galería con Lunes al cargar la página
+        document.addEventListener('DOMContentLoaded', function(){
+            renderPersistentGallery('lunes');
+            // eventos de filtros
+            document.querySelectorAll('.day-filter').forEach(btn => {
+                btn.addEventListener('click', () => renderPersistentGallery(btn.dataset.day));
+            });
+        });
+
         function openModal(day) {
             const modal = document.getElementById('scheduleModal');
             const img = document.getElementById('modalImage');
             const titleEl = document.getElementById('modalTitle');
+            const galleryContainer = document.getElementById('dayGallery');
+            const grid = document.getElementById('galleryGrid');
 
             const imageMap = {
                 lunes: 'Lunes-10.jpg',
@@ -1012,6 +1174,14 @@
                 jueves: 'Jueves',
                 viernes: 'Viernes'
             };
+            // Mapa de galería por día (puedes ajustar rutas/imagenes)
+            const galleryMap = {
+                lunes: ['imag-congreso/1.jpg','imag-congreso/2.jpg','imag-congreso/3.jpg'],
+                martes: ['imag-congreso/4.jpg','imag-congreso/5.jpg','imag-congreso/6.jpg'],
+                miercoles: ['imag-congreso/7.jpg','imag-congreso/8.jpg','imag-congreso/9.jpg'],
+                jueves: ['imag-congreso/10.jpg','imag-congreso/11.jpg'],
+                viernes: ['imag-congreso/12.jpg','imag-congreso/13.jpg','imag-congreso/14.jpg']
+            };
 
             const key = (day || '').toLowerCase();
             const src = imageMap[key] || 'Lunes-10.jpg';
@@ -1019,6 +1189,23 @@
 
             if (img) img.src = src;
             if (titleEl) titleEl.textContent = dayLabel ? `Cronograma Detallado - ${dayLabel}` : 'Cronograma Detallado';
+
+            // Renderizar galería del día en modal
+            if (grid && galleryContainer) {
+                const images = (window.galleryMapGlobal && window.galleryMapGlobal[key]) || (galleryMap[key] || []);
+                if (images.length) {
+                    galleryContainer.style.display = 'block';
+                    grid.innerHTML = images.map((src, idx) => (
+                        `<div class=\"gallery-item\"><img src=\"${src}\" alt=\"Foto ${(dayLabel || key)} ${idx+1}\"></div>`
+                    )).join('');
+                } else {
+                    galleryContainer.style.display = 'none';
+                    grid.innerHTML = '';
+                }
+            }
+
+            // Sincronizar galería visible
+            renderPersistentGallery(key);
             
             // Mostrar modal con animación
             modal.style.display = 'flex';
@@ -1037,12 +1224,16 @@
             
             const modal = document.getElementById('scheduleModal');
             const img = document.getElementById('modalImage');
+            const galleryContainer = document.getElementById('dayGallery');
+            const grid = document.getElementById('galleryGrid');
             
             // Ocultar modal con animación
             modal.style.opacity = '0';
             setTimeout(() => {
                 modal.style.display = 'none';
                 if (img) img.src = '';
+                if (grid) grid.innerHTML = '';
+                if (galleryContainer) galleryContainer.style.display = 'none';
             }, 300);
             
             // Restaurar scroll del body
