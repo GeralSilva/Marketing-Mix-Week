@@ -1191,18 +1191,10 @@
             if (img) img.src = src;
             if (titleEl) titleEl.textContent = dayLabel ? `Cronograma Detallado - ${dayLabel}` : 'Cronograma Detallado';
 
-            // Renderizar galería del día en modal
+            // Desactivar galería dentro del modal; usar solo la galería visible
             if (grid && galleryContainer) {
-                const images = (window.galleryMapGlobal && window.galleryMapGlobal[key]) || (galleryMap[key] || []);
-                if (images.length) {
-                    galleryContainer.style.display = 'block';
-                    grid.innerHTML = images.map((src, idx) => (
-                        `<div class=\"gallery-item\"><img src=\"${src}\" alt=\"Foto ${(dayLabel || key)} ${idx+1}\"></div>`
-                    )).join('');
-                } else {
-                    galleryContainer.style.display = 'none';
-                    grid.innerHTML = '';
-                }
+                galleryContainer.style.display = 'none';
+                grid.innerHTML = '';
             }
 
             // Sincronizar galería visible
