@@ -516,9 +516,23 @@
         /* Iframe que contiene el contenido de Genially */
         .modal-iframe {
             width: 100%;
-            height: calc(100% - 60px); /* Altura completa menos la cabecera */
+            height: 100%;
             border: none; /* Sin bordes */
             border-radius: 0 0 10px 10px; /* Bordes redondeados inferiores */
+        }
+
+        /* Overrides para el modal de actividades (mejor tamaño y visibilidad) */
+        #activityModal .modal-content {
+            width: 95%;
+            max-width: 1400px;
+            height: 90vh;
+            max-height: 90vh;
+            display: grid;
+            grid-template-rows: auto 1fr;
+            overflow: hidden; /* el iframe manejará su propio scroll si lo requiere */
+        }
+        #activityModal .modal-iframe {
+            height: 100%;
         }
 
         /* Imagen dentro del modal de cronograma */
@@ -632,6 +646,33 @@
              box-shadow: 0 6px 24px rgba(0,0,0,0.12);
              display: block;
              margin: 0 auto;
+         }
+
+         /* Controles del carrusel visibles en naranja y más centrados */
+         .gallery-carousel .carousel-control-prev,
+         .gallery-carousel .carousel-control-next {
+             width: 15%;
+             opacity: 0.95;
+         }
+         .gallery-carousel .carousel-control-prev { left: 8%; }
+         .gallery-carousel .carousel-control-next { right: 8%; }
+
+         .gallery-carousel .carousel-control-prev-icon,
+         .gallery-carousel .carousel-control-next-icon {
+             width: 3rem;
+             height: 3rem;
+             border-radius: 50%;
+             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+             background-size: 60% 60%;
+             background-position: center;
+             background-repeat: no-repeat;
+         }
+         /* Íconos SVG en color naranja corporativo */
+         .gallery-carousel .carousel-control-prev-icon {
+             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='%23f76300' d='M11 1L3 8l8 7'/%3e%3c/svg%3e");
+         }
+         .gallery-carousel .carousel-control-next-icon {
+             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='%23f76300' d='M5 1l8 7-8 7'/%3e%3c/svg%3e");
          }
  
          /* ===== RESPONSIVE DESIGN - DISPOSITIVOS MÓVILES ===== */
@@ -945,6 +986,7 @@
                 <div id='info-casos' class='activity-info'>
                     <h6>¿Cómo se realiza?</h6>
                     <p>Egresados SENA de los programas de formación en mercadeo, comparten su historia de vida y crecimiento profesional, mostrando cómo el aprendizaje transformó su visión y los llevó a destacarse en el mercado laboral. <strong>Una experiencia que inspira a las nuevas generaciones.</strong></p>
+                    <button class='btn btn-custom btn-sm' data-url='https://www.canva.com/design/DAG5JzkzGqA/glziijy3WT9lSiL0CbuItA/view?utm_content=DAG5JzkzGqA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h81b34680bb' onclick='openActivityModal(this.dataset.url)'>Ver</button>
                 </div>
             </div>
             <div class='col-md-6 col-lg-4'>
@@ -955,7 +997,7 @@
                 <div id='info-conferencias' class='activity-info'>
                     <h6>¿Cómo se realiza?</h6>
                     <p>Se realizarán en el marco del “I Congreso de Actualización en Marketing”. <strong>Se trata de un escenario académico y empresarial que reúne expertos, aprendices e instructores bajo la temática “Marketing holístico: evolución sin pausa”.</strong> Aborda líneas como neuromarketing, marketing sostenible, innovación comercial y marketing cultural, conectando educación, empresa e innovación en un solo escenario.</p>
-                    <a href='https://marketing-mix-week.vercel.app/congreso.html' target='_blank' class='btn btn-custom btn-sm'>Congreso</a>
+                    <a href='congreso.html#grabaciones-conferencias' target='_blank' class='btn btn-custom btn-sm'>Grabaciones de las Conferencias</a>
                 </div>
             </div>
             <div class='col-md-6 col-lg-4'>
@@ -964,9 +1006,15 @@
                     <h5>Marketiando con Sami</h5>
                 </div>
                 <div id='info-sami' class='activity-info'>
-                    <h6>¿Cómo se realiza?</h6>
+                    <h6>¿Quién es Sami?</h6>
                     <p>Sami es el personaje digital de MMW, que personifica a una aprendiz SENA de un programa de formación de mercadeo y que combina humor, conocimiento y tendencia. <strong>A través de sus tips, videos y cápsulas, conecta con la audiencia joven para enseñar marketing de forma divertida, sencilla y actual.</strong></p>
-                    <a href='https://www.tiktok.com/@inhouse52sena' target='_blank' class='btn btn-custom btn-sm'>Ver TikTok</a>
+                    <a href='https://www.tiktok.com/@inhouse52sena/video/7571099393244318994' target='_blank' class='btn btn-custom btn-sm'>T4 E1 - P de PRODUCTO Coca-Cola</a>
+                    <br></br>
+                    <a href='https://www.tiktok.com/@inhouse52sena/video/7571143653062642952' target='_blank' class='btn btn-custom btn-sm'>T4 E2 - P de PRECIO Challenger</a>
+                    <br></br>
+                    <a href='https://www.tiktok.com/@inhouse52sena/video/7571492543242767623' target='_blank' class='btn btn-custom btn-sm'>T4 E3 - P de PLAZA Brandless</a>
+                    <br></br>
+                    <a href='https://www.tiktok.com/@inhouse52sena/video/7571592445914336530' target='_blank' class='btn btn-custom btn-sm'>T4 E4 - P de PROMOCIÓN Corona Cero</a>
                 </div>
             </div>
         </div>
@@ -1123,7 +1171,7 @@
             martes: ['img-dias/martes/1.jpg','img-dias/martes/2.jpg','img-dias/martes/3.jpg','img-dias/martes/4.jpg','img-dias/martes/5.jpg','img-dias/martes/6.jpg','img-dias/martes/8.jpg','img-dias/martes/9.jpg','img-dias/martes/10.jpg','img-dias/martes/11.jpg','img-dias/martes/12.jpg','img-dias/martes/13.jpg','img-dias/martes/14.jpg','img-dias/martes/16.jpg','img-dias/martes/17.jpg','img-dias/martes/18.jpg','img-dias/martes/19.jpg','img-dias/martes/20.jpg'],
             miercoles: ['img-dias/miercoles/15.jpg','img-dias/miercoles/20.jpg','img-dias/miercoles/1.jpg','img-dias/miercoles/3.jpg','img-dias/miercoles/4.jpg','img-dias/miercoles/5.jpg','img-dias/miercoles/6.jpg','img-dias/miercoles/7.jpg','img-dias/miercoles/8.jpg'],
             jueves: ['img-dias/jueves/1.jpg','img-dias/jueves/2.jpg','img-dias/jueves/3.jpg','img-dias/jueves/4.jpg','img-dias/jueves/5.jpg','img-dias/jueves/6.jpg','img-dias/jueves/7.jpg','img-dias/jueves/8.jpg'],
-            viernes: ['img-dias/viernes/1.jpg','img-dias/viernes/2.jpg','img-dias/viernes/3.jpg','img-dias/viernes/4.jpg','img-dias/viernes/5.jpg','img-dias/viernes/6.jpg']
+            viernes: ['img-dias/viernes/1.jpg','img-dias/viernes/2.jpg','img-dias/viernes/3.jpg','img-dias/viernes/4.jpg','img-dias/viernes/5.jpg','img-dias/viernes/6.jpg','img-dias/viernes/7.jpeg','img-dias/viernes/8.jpeg','img-dias/viernes/9.jpeg','img-dias/viernes/10.jpeg']
         };
 
         function renderPersistentGallery(dayKey){
@@ -1285,7 +1333,21 @@
   function openActivityModal(url) {
     const modal = document.getElementById('activityModal');
     const iframe = document.getElementById('activityIframe');
-    iframe.src = url || 'https://view.genially.com/690257505151ac3654d607fe/interactive-content-mmw-2025-destrezas';
+    let finalUrl = url || 'https://view.genially.com/690257505151ac3654d607fe/interactive-content-mmw-2025-destrezas';
+
+    // Forzar modo embed en enlaces de Canva para que se muestren dentro del iframe
+    if (finalUrl.includes('canva.com/design')) {
+      const hasQuery = finalUrl.includes('?');
+      const hasEmbed = /(\?|&)embed\b/.test(finalUrl);
+      if (!hasEmbed) {
+        finalUrl = hasQuery ? (finalUrl + '&embed') : (finalUrl + '?embed');
+      }
+    }
+
+    iframe.src = finalUrl;
+    iframe.setAttribute('allowfullscreen', 'allowfullscreen');
+    iframe.setAttribute('allow', 'fullscreen');
+
     modal.style.display = 'flex';
     setTimeout(() => { modal.style.opacity = '1'; }, 10);
     document.body.style.overflow = 'hidden';
