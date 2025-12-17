@@ -1,87 +1,68 @@
 # 🎯 Marketing Mix Week
 
-> Sitio web educativo para eventos de marketing académico
+> Sitio web educativo y de eventos de marketing académico
 
 ## 📖 ¿Qué es este proyecto?
-
-Marketing Mix Week es un sitio web que presenta información sobre eventos académicos de marketing. Incluye páginas para diferentes años (2021, 2022, 2023) con actividades educativas sobre las 4P del Marketing: **Producto**, **Precio**, **Plaza** y **Promoción**.
-
-## 🌟 Características principales
-
-- ✅ **Diseño responsive** - Se ve bien en celulares, tablets y computadoras
-- ✅ **Fácil navegación** - Menús simples y claros
-- ✅ **Contenido educativo** - Información sobre marketing y actividades
-- ✅ **Múltiples versiones** - Páginas para diferentes años del evento
+Marketing Mix Week es un sitio web estático con páginas informativas y recursos de eventos. Incluye la página principal (`index.html`), una página de congreso (`congreso.html`), versiones históricas (`Versiones/2021.html`, `2022.html`, `2023.html`) y recursos de despliegue (Docker/Nginx y Azure).
 
 ## 🚀 Cómo ver el sitio web
 
-### Opción 1: Ver online (más fácil)
-Visita: [https://geralsilva.github.io/Marketing-Mix-Week/](https://geralsilva.github.io/Marketing-Mix-Week/)
+### Opción 1: Ver online (recomendado)
+- GitHub Pages: https://geralsilva.github.io/Marketing-Mix-Week/
+- Vercel: https://marketing-mix-week.vercel.app/
 
 ### Opción 2: Ver en tu computadora
-1. Descarga todos los archivos del proyecto
-2. Abre el archivo `index.html` en tu navegador web
+1. Descarga o clona el proyecto
+2. Abre `index.html` (o `congreso.html`) en tu navegador
 
-### Opción 3: Servidor local (para desarrolladores)
-```bash
-# Si tienes Python instalado:
-python -m http.server 8000
+### Opción 3: Servidor local (dev)
+- Con Live Server (VS Code): haz clic en "Go Live"
+- Con Python:
+  ```bash
+  python -m http.server 8000
+  # Navega a: http://localhost:8000
+  ```
 
-# Luego ve a: http://localhost:8000
-```
-
-## 📁 Archivos del proyecto
-
+## 📁 Estructura principal del proyecto
 ```
 Marketing-Mix-Week/
-├── index.html          # Página principal
-├── actividades.html    # Página de actividades
-├── Versiones/          # Carpeta con páginas por año
-│   ├── 2021.html      # Información del evento 2021
-│   ├── 2022.html      # Información del evento 2022
-│   └── 2023.html      # Información del evento 2023
-├── images.png          # Imagen del logo/favicon
-├── logo.jpg           # Logo del sitio
-└── README.md          # Este archivo de información
+├── index.html                         # Página principal
+├── congreso.html                      # Página del Congreso
+├── Versiones/                         # Páginas históricas
+│   ├── 2021.html
+│   ├── 2022.html
+│   └── 2023.html
+├── img/                               # Imágenes generales (banners, fechas, etc.)
+├── img-dias/                          # Imágenes por día (lunes...viernes)
+├── imag-congreso/                     # Imágenes varias del congreso
+├── QRcongreso.png                     # Imagen del QR
+├── logo.png                           # Logo del sitio
+├── images.png                         # Favicon     
+├── README_congreso_para_principiantes.md  # Guía para editores nuevos
+├── ESTRUCTURA.txt                     # Inventario completo del proyecto
+└── README.md                          # Este archivo
 ```
 
-## 🎯 Páginas disponibles
-
-### 🏠 Página Principal (`index.html`)
-- Información general del Marketing Mix Week
-- Enlaces a las diferentes versiones del evento
-- Diseño moderno con colores naranjas
-
-### 🎮 Actividades (`actividades.html`)
-- Marketing Mix Strategy
-- Olimpiadas de Conocimiento
-- Casos de Éxito
-- Conferencia Taller
-- Destrezas Mercadológicas
-- Marketiando con Sami
-
-### 📅 Versiones por Año
-- **2021**: Versión completa con toda la información
-- **2022**: Versión resumida y visual
-- **2023**: Versión actualizada
+## 🌟 Contenidos destacables
+- ✅ Diseño responsive con **Bootstrap**
+- ✅ Navbar, carrusel y secciones informativas
+- ✅ Agenda por día y líneas temáticas del congreso
+- ✅ Recursos visuales organizados por carpetas
 
 ## 🛠️ Tecnologías usadas
+- **HTML** para la estructura
+- **CSS / Bootstrap** para estilos y responsive
+- **Font Awesome** para iconos
+- **Google Fonts** para tipografías
 
-- **HTML** - Estructura de las páginas
-- **CSS** - Estilos y diseño visual
-- **Bootstrap** - Framework para diseño responsive
-- **Font Awesome** - Iconos bonitos
 
-## 📱 Compatible con
-
-- ✅ **Navegadores**: Chrome, Firefox, Safari, Edge
-- ✅ **Dispositivos**: Celulares, tablets, computadoras
-- ✅ **Sistemas**: Windows, Mac, Linux, Android, iOS
+## 📚 Documentación
+- Guía para principiantes: `README_para_principiantes.md`
+- Inventario completo de archivos: `ESTRUCTURA.txt`
 
 ## 👨‍💻 Creado por
-
 **Geraldine Silva**
 - GitHub: [@GeralSilva](https://github.com/GeralSilva)
 - Institución: SENA - Centro de Gestión de Mercados
 
-**¡Gracias por usar Marketing Mix Week!** 🎯
+**¡Gracias ** 🎯
